@@ -10,7 +10,7 @@ Am Bahnhof 10
 35066 Frankenberg  
 Germany  
 
-Phone: +49 6451 240925  
+Phone: 06451 240925  
 
 Opening Hours:  
 Mon–Thu & Sun: 10:00 – 23:00  
