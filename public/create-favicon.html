@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<canvas id="c" width="32" height="32"></canvas>
+<script>
+const c = document.getElementById('c');
+const ctx = c.getContext('2d');
+ctx.fillStyle = '#171717';
+ctx.fillRect(0, 0, 32, 32);
+ctx.fillStyle = '#dc2626';
+ctx.font = 'bold 24px sans-serif';
+ctx.textAlign = 'center';
+ctx.textBaseline = 'middle';
+ctx.fillText('D', 16, 16);
+c.toBlob(blob => {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'favicon.ico';
+  a.click();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1109 @@
+{
+  "restaurant": {
+    "name": "Bahnhof Döner Grill",
+    "address": "Am Bahnhof 10, 35066 Frankenberg",
+    "lastUpdated": "2026-02-20",
+    "source": "speisekarte.docx",
+    "branding": {
+      "primaryColor": "#FC683F",
+      "bgDark": "#1A1516",
+      "textLight": "#FAF0E8",
+      "logoPath": "assets/logo.svg",
+      "fonts": {
+        "heading": "serif",
+        "body": "sans-serif"
+      }
+    }
+  },
+  "categories": [
+    {
+      "id": "drehspiess",
+      "name": "Döner",
+      "icon": "doener",
+      "pageBreak": true,
+      "items": [
+        {
+          "id": "drehspiess-0",
+          "nr": 2,
+          "name": "Falafel-Box",
+          "description": "mit Pommes",
+          "price": "6,00 €",
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "drehspiess-00",
+          "nr": 3,
+          "name": "Drehspieß-Box",
+          "description": "Hackfleisch vom Kalb mit Pommes",
+          "price": "6,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-1",
+          "nr": 1,
+          "name": "Drehspieß mit Fladenbrot",
+          "description": "Hackfleisch vom Kalb mit Salat und Soße",
+          "price": "7,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-4",
+          "nr": 4,
+          "name": "Hawaii Drehspieß",
+          "description": "Hackfleisch vom Kalb mit Salat und Soße",
+          "price": "8,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-5",
+          "nr": 5,
+          "name": "Hähnchen Döner",
+          "description": "mit Salat und Soße",
+          "price": "7,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-6",
+          "nr": 6,
+          "name": "Drehspieß mit Knoblauchwurst",
+          "description": "Hackfleisch vom Kalb mit Salat und Soße",
+          "price": "8,50 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-7",
+          "nr": 7,
+          "name": "Drehspieß mit Weichkäse",
+          "description": "Hackfleisch vom Kalb mit Salat und Soße",
+          "price": "8,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-8",
+          "nr": 8,
+          "name": "Vegetarischer Döner",
+          "description": "mit Salat und Soße",
+          "price": "7,00 €",
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "drehspiess-9",
+          "nr": 9,
+          "name": "Hippi Döner",
+          "description": "im Fladenbrot mit Pommes, Fleisch und Soße",
+          "price": "8,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-10",
+          "nr": 10,
+          "name": "Drehspieß Spezial im Fladenbrot",
+          "description": "doppelt Fleisch, Hackfleisch vom Kalb",
+          "price": "8,50 €",
+          "badges": []
+        }
+      ]
+    },
+    {
+      "id": "drehspiess-teller",
+      "name": "Döner Teller",
+      "icon": "teller",
+      "pageBreak": true,
+      "items": [
+        {
+          "id": "drehspiess-teller-1",
+          "nr": 11,
+          "name": "Drehspießteller",
+          "description": "Hackfleisch vom Kalb mit gemischtem Salat",
+          "price": "10,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-teller-1a",
+          "nr": 11,
+          "name": "Drehspießteller",
+          "description": "Hackfleisch vom Kalb mit Pommes Frites",
+          "price": "10,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-teller-2",
+          "nr": 12,
+          "name": "Drehspießteller",
+          "description": "Hackfleisch vom Kalb mit Weichkäse und gemischtem Salat",
+          "price": "11,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-teller-3",
+          "nr": 13,
+          "name": "Drehspießteller",
+          "description": "Hackfleisch vom Kalb mit Pommes und gemischtem Salat",
+          "price": "11,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-teller-4",
+          "nr": 14,
+          "name": "Drehspießteller",
+          "description": "Hackfleisch vom Kalb mit Reis und gemischtem Salat",
+          "price": "11,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-teller-5",
+          "nr": 15,
+          "name": "Drehspieß Portion (normal)",
+          "description": "Hackfleisch vom Kalb",
+          "price": "7,50 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-teller-6",
+          "nr": 16,
+          "name": "Drehspieß Portion (doppelt)",
+          "description": "Hackfleisch vom Kalb",
+          "price": "10,00 €",
+          "badges": []
+        },
+        {
+          "id": "drehspiess-teller-7",
+          "nr": 17,
+          "name": "Schnitzel Döner im Fladenbrot",
+          "description": "Hackfleisch vom Kalb mit Salat und Soße",
+          "price": "8,50 €",
+          "badges": []
+        }
+      ]
+    },
+    {
+      "id": "kleine-gerichte",
+      "name": "Kleine Gerichte",
+      "icon": "snack",
+      "pageBreak": true,
+      "items": [
+        {
+          "id": "kleine-gerichte-1",
+          "nr": 18,
+          "name": "Port. Pommes",
+          "description": "(klein)",
+          "price": "3,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-2",
+          "nr": 19,
+          "name": "Port. Pommes",
+          "description": "(groß)",
+          "price": "4,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-3",
+          "nr": 20,
+          "name": "Ketchup oder Mayonnaise",
+          "description": "extra",
+          "price": "0,50 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-4",
+          "nr": 21,
+          "name": "Jäger, Zigeuner oder Currysoße",
+          "description": "extra",
+          "price": "1,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-5",
+          "nr": 22,
+          "name": "Bratwurst",
+          "description": "",
+          "price": "4,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-6",
+          "nr": 23,
+          "name": "Currywurst",
+          "description": "mit Curry-Sauce",
+          "price": "4,50 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-7",
+          "nr": 24,
+          "name": "Jägerwurst",
+          "description": "mit Jäger-Sauce",
+          "price": "4,50 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-8",
+          "nr": 25,
+          "name": "Zigeunerwurst",
+          "description": "mit Zigeuner-Sauce",
+          "price": "4,50 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-9",
+          "nr": 26,
+          "name": "Falafelteller",
+          "description": "mit Pommes und Salat",
+          "price": "11,00 €",
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "kleine-gerichte-9a",
+          "nr": 26,
+          "name": "Falafelteller",
+          "description": "mit Pommes",
+          "price": "10,00 €",
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "kleine-gerichte-9b",
+          "nr": 26,
+          "name": "Falafelteller",
+          "description": "mit Salat",
+          "price": "10,00 €",
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "kleine-gerichte-10a",
+          "nr": 27,
+          "name": "1/2 Hähnchen",
+          "description": "mit Brot",
+          "price": "7,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-10b",
+          "nr": 27,
+          "name": "1/2 Hähnchen",
+          "description": "mit Pommes",
+          "price": "10,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-10c",
+          "nr": 27,
+          "name": "1/2 Hähnchen",
+          "description": "mit Pommes und Salat",
+          "price": "11,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-11",
+          "nr": 28,
+          "name": "Falafel Döner",
+          "description": "mit Salat und Soße",
+          "price": "7,00 €",
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "kleine-gerichte-12",
+          "nr": 29,
+          "name": "Hamburger",
+          "description": "",
+          "price": "3,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-13",
+          "nr": 30,
+          "name": "Doppel Hamburger",
+          "description": "doppelt belegt",
+          "price": "4,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-14",
+          "nr": 31,
+          "name": "Cheeseburger",
+          "description": "mit Käse",
+          "price": "3,50 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-15",
+          "nr": 32,
+          "name": "Chicken Nuggets",
+          "description": "mit Pommes",
+          "price": "7,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-16",
+          "nr": 33,
+          "name": "Hawaii-Burger",
+          "description": "mit Ananas",
+          "price": "3,50 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-17",
+          "nr": 34,
+          "name": "Dönerburger",
+          "description": "mit Dönerfleisch",
+          "price": "8,50 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-17a",
+          "nr": 34,
+          "name": "Hähnchen-Dönerburger",
+          "description": "mit Hähnchen-Dönerfleisch",
+          "price": "8,50 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-18",
+          "nr": 35,
+          "name": "Schnitzel",
+          "description": "mit Pommes",
+          "price": "10,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-18a",
+          "nr": 35,
+          "name": "Schnitzel",
+          "description": "mit Pommes und Salat",
+          "price": "11,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-19",
+          "nr": 36,
+          "name": "Chickenburger",
+          "description": "mit Hähnchen",
+          "price": "3,50 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-20",
+          "nr": 36,
+          "name": "Börek",
+          "description": "mit Soße",
+          "price": "7,00 €",
+          "badges": []
+        },
+        {
+          "id": "kleine-gerichte-21",
+          "nr": 36,
+          "name": "Börek",
+          "description": "mit Salat und Soße",
+          "price": "10,00 €",
+          "badges": []
+        }
+      ]
+    },
+    {
+      "id": "lahmacun",
+      "name": "Lahmacun (Türkische Pizza)",
+      "icon": "lahmacun",
+      "pageBreak": true,
+      "items": [
+        {
+          "id": "lahmacun-0",
+          "nr": 37,
+          "name": "Lahmacun",
+          "description": "mit Fleisch, Weichkäse, Salat und Soße",
+          "price": "8,50 €",
+          "badges": []
+        },
+        {
+          "id": "lahmacun-1",
+          "nr": 38,
+          "name": "Lahmacun",
+          "description": "mit Salat",
+          "price": "6,00 €",
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "lahmacun-2",
+          "nr": 38,
+          "name": "Lahmacun",
+          "description": "mit Dönerfleisch und Salat",
+          "price": "8,00 €",
+          "badges": []
+        },
+        {
+          "id": "lahmacun-3",
+          "nr": 38,
+          "name": "Lahmacun",
+          "description": "mit doppelt Fleisch und Salat",
+          "price": "8,50 €",
+          "badges": []
+        },
+        {
+          "id": "lahmacun-4",
+          "nr": 38,
+          "name": "Lahmacun",
+          "description": "mit Weichkäse und Salat",
+          "price": "7,00 €",
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "lahmacun-5",
+          "nr": 39,
+          "name": "Sandwich",
+          "description": "mit Knoblauchwurst",
+          "price": "8,00 €",
+          "badges": []
+        },
+        {
+          "id": "lahmacun-6",
+          "nr": 40,
+          "name": "Yufka",
+          "description": "mit Dönerfleisch, Salat und Soße",
+          "price": "8,00 €",
+          "badges": []
+        }
+      ]
+    },
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "icon": "pizza",
+      "pageBreak": true,
+      "items": [
+        {
+          "id": "pizza-1",
+          "nr": 41,
+          "name": "Margharita Pizza",
+          "description": "mit Tomatensoße und Käse",
+          "prices": {
+            "klein": "6,00 €",
+            "groß": "7,50 €"
+          },
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "pizza-2",
+          "nr": 42,
+          "name": "Pizza Salami",
+          "description": "mit Tomatensoße, Käse und Salami",
+          "prices": {
+            "klein": "6,50 €",
+            "groß": "8,50 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-3",
+          "nr": 43,
+          "name": "Pizza Schinken",
+          "description": "mit Tomatensoße, Käse und Schinken",
+          "prices": {
+            "klein": "6,50 €",
+            "groß": "8,50 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-4",
+          "nr": 44,
+          "name": "Pizza Pilzen",
+          "description": "mit Tomatensoße, Käse und Pilzen",
+          "prices": {
+            "klein": "6,50 €",
+            "groß": "8,50 €"
+          },
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "pizza-5",
+          "nr": 45,
+          "name": "Pizza Marinara",
+          "description": "mit Tomatensoße, Käse und Meeresfrüchte",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-6",
+          "nr": 46,
+          "name": "Scampi Pizza",
+          "description": "mit Tomatensoße, Käse und Krabben",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-7",
+          "nr": 47,
+          "name": "Bolognese Pizza",
+          "description": "mit Tomatensoße, Käse und Hackfleisch",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-8",
+          "nr": 48,
+          "name": "Pizza Döner",
+          "description": "mit Tomatensoße, Käse und Dönerfleisch",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-9",
+          "nr": 49,
+          "name": "Hawaii Pizza",
+          "description": "mit Tomatensoße, Käse, Schinken und Ananas",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-10",
+          "nr": 50,
+          "name": "Mozzarella Pizza",
+          "description": "mit Tomatensoße, Käse, Mozzarella und frischen Tomatenscheiben",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,50 €"
+          },
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "pizza-11",
+          "nr": 51,
+          "name": "Bahnhof-Pizza-Döner",
+          "description": "mit Tomatensoße, Käse und Hähnchenststreifen",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "11,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-12",
+          "nr": 52,
+          "name": "Pizza Tonno",
+          "description": "mit Tomatensoße, Zwiebeln, Thunfisch und Käse",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-13",
+          "nr": 53,
+          "name": "Frankenberg Pizza",
+          "description": "mit Tomatensoße, Käse, Salami und Schinken",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-14",
+          "nr": 54,
+          "name": "Käsevielfalt Pizza",
+          "description": "mit Tomatensoße und 4 verschiedenen Käsesorten",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "pizza-15",
+          "nr": 55,
+          "name": "Vegetaria Pizza",
+          "description": "mit Tomatensoße, Käse, Pilzen, Mais, Zwiebel, Paprika, Brokkoli und Erbsen",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "pizza-16",
+          "nr": 56,
+          "name": "Spinat Pizza",
+          "description": "mit Tomatensoße, Käse, Schinken, Ei und Spinat",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,50 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-17",
+          "nr": 57,
+          "name": "Peperoniwurst Pizza",
+          "description": "mit Tomatensoße, Käse und Peperoniwurst",
+          "prices": {
+            "klein": "6,50 €",
+            "groß": "8,50 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-18",
+          "nr": 58,
+          "name": "Vierjahreszeiten Pizza",
+          "description": "mit Tomatensoße, Käse, Salami, Schinken, Pilzen und Paprika",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,50 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-19",
+          "nr": 59,
+          "name": "Calzone gefüllt",
+          "description": "mit Tomatensoße, Käse, Salami, Schinken, Pilzen und Paprika",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-19a",
+          "nr": 59,
+          "name": "Calzone Tonno-Hawaii",
+          "description": "mit Tomatensoße, Käse, Thunfisch und Ananas",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-19b",
+          "nr": 59,
+          "name": "Calzone Döner",
+          "description": "mit Tomatensoße, Käse und Dönerfleisch",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-19c",
+          "nr": 59,
+          "name": "Calzone Hähnchen Döner",
+          "description": "mit Tomatensoße, Käse und Hähnchen-Dönerfleisch",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-20",
+          "nr": 60,
+          "name": "Quattro Formaggi Pizza",
+          "description": "mit Tomatensoße und 4 Käsesorten",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "pizza-21",
+          "nr": 61,
+          "name": "Pizza Diavolo",
+          "description": "mit Tomatensoße, Käse, Salami und Peperoni",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": ["scharf"]
+        },
+        {
+          "id": "pizza-22",
+          "nr": 62,
+          "name": "Toscana Pizza",
+          "description": "mit Tomatensoße, Käse, Salami, Schinken, Peperoniwurst, Pilzen und Zwiebeln",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,50 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-23",
+          "nr": 63,
+          "name": "Pizza Capricciosa",
+          "description": "mit Tomatensoße, Käse, Salami, Schinken, Peperoniwurst, Pilzen, Paprika und Artischocken",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "9,50 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-24",
+          "nr": 64,
+          "name": "Spezial Pizza",
+          "description": "mit Tomatensoße, Käse, Thunfisch, Weichkäse, Peperoni und Zwiebeln",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-25",
+          "nr": 65,
+          "name": "Mafia Pizza",
+          "description": "mit Tomatensoße, Käse, Salami, Peperoniwurst, Peperoni und Oliven",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": ["scharf"]
+        },
+        {
+          "id": "pizza-26",
+          "nr": 66,
+          "name": "Neu Pizza",
+          "description": "mit Tomatensoße, Käse, Thunfisch, Pilzen, Paprika und Mozzarella",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-27",
+          "nr": 67,
+          "name": "Nizza Pizza",
+          "description": "mit Tomatensoße, Käse, Thunfisch, Pilzen und Paprika",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-28",
+          "nr": 68,
+          "name": "Teufel Pizza",
+          "description": "mit Tomatensoße, Käse, Salami, Schinken, Artischocken und Oliven",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "9,50 €"
+          },
+          "badges": ["scharf"]
+        },
+        {
+          "id": "pizza-29",
+          "nr": 69,
+          "name": "Pizza mit Allem",
+          "description": "mit Tomatensoße, Käse, Salami, Schinken, Peperoniwurst, Thunfisch, Paprika, Knoblauch und Peperoni",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "11,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-30",
+          "nr": 70,
+          "name": "Pizzabrot",
+          "description": "mit Käse",
+          "prices": {
+            "klein": "5,50 €",
+            "groß": "7,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-30a",
+          "nr": 70,
+          "name": "Pizzabrot",
+          "description": "mit Tomatensoße und Knoblauch",
+          "prices": {
+            "klein": "5,50 €",
+            "groß": "7,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-romana",
+          "nr": 93,
+          "name": "Pizza Romana",
+          "description": "mit Käse und Tomaten",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-rustica",
+          "nr": 94,
+          "name": "Pizza Rustica",
+          "description": "mit Käse und Fleisch",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pizza-sucuk",
+          "nr": 95,
+          "name": "Pizza Sucuk",
+          "description": "mit Sucuk",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        }
+      ]
+    },
+    {
+      "id": "salate",
+      "name": "Salate",
+      "icon": "salat",
+      "pageBreak": true,
+      "items": [
+        {
+          "id": "salate-1",
+          "nr": 71,
+          "name": "Tomatensalat",
+          "description": "mit Essig-Öl, Basilikum",
+          "prices": {
+            "klein": "6,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "salate-2",
+          "nr": 72,
+          "name": "Salat Italia",
+          "description": "mit Weißkraut, Karotten, Schinken, Käse, Ei und Dressing",
+          "prices": {
+            "klein": "6,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "salate-3",
+          "nr": 73,
+          "name": "Salat Capri",
+          "description": "mit Weißkraut, Karotten, Schinken, Käse, Ei, Thunfisch und Dressing",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "salate-4",
+          "nr": 74,
+          "name": "Sommersalat",
+          "description": "mit Hänchenstreifen und Dressing",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "salate-5",
+          "nr": 75,
+          "name": "Bauernsalat",
+          "description": "mit Weißkraut, Karotten, Weichkäse, Peperoni, Zwiebeln, Oliven und Dressing",
+          "prices": {
+            "klein": "6,50 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "salate-6",
+          "nr": 76,
+          "name": "Salat Bahnhof-Döner",
+          "description": "mit Weißkraut, Karotten, Schinken, Weichkäse, Peperoni, Zwiebeln, Oliven und Dressing",
+          "prices": {
+            "klein": "7,00 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "salate-7",
+          "nr": 77,
+          "name": "Salat Frankenberg",
+          "description": "mit Weißkraut, Karotten, Schinken, Käse, Paprika, Peperoni, Ei und Dressing",
+          "prices": {
+            "klein": "6,50 €",
+            "groß": "9,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "salate-8",
+          "nr": 78,
+          "name": "Gemischter Salat",
+          "description": "mit Weißkraut, Karotten, Tomaten, Gurken und Dressing",
+          "prices": {
+            "klein": "6,00 €",
+            "groß": "8,00 €"
+          },
+          "badges": ["vegetarisch"]
+        }
+      ]
+    },
+    {
+      "id": "pide",
+      "name": "Pide (Schiffchen)",
+      "icon": "pide",
+      "pageBreak": true,
+      "items": [
+        {
+          "id": "pide-1",
+          "nr": 90,
+          "name": "Pide Döner",
+          "description": "mit Dönerfleisch",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        },
+        {
+          "id": "pide-2",
+          "nr": 91,
+          "name": "Pide Käse",
+          "description": "mit Käse",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": ["vegetarisch"]
+        },
+        {
+          "id": "pide-3",
+          "nr": 92,
+          "name": "Pide Sucuk",
+          "description": "mit Sucuk",
+          "prices": {
+            "klein": "7,50 €",
+            "groß": "10,00 €"
+          },
+          "badges": []
+        }
+      ]
+    },
+    {
+      "id": "getraenke",
+      "name": "Getränke",
+      "icon": "drink",
+      "pageBreak": true,
+      "items": [
+        {
+          "id": "getraenke-1",
+          "nr": 80,
+          "name": "Ayran",
+          "description": "Joghurt Getränk, 0,25l",
+          "price": "1,50 €",
+          "badges": []
+        },
+        {
+          "id": "getraenke-2",
+          "nr": 81,
+          "name": "Coca Cola",
+          "description": "0,33l",
+          "price": "1,80 €",
+          "badges": []
+        },
+        {
+          "id": "getraenke-3",
+          "nr": 82,
+          "name": "Sprite",
+          "description": "0,33l",
+          "price": "1,80 €",
+          "badges": []
+        },
+        {
+          "id": "getraenke-4",
+          "nr": 83,
+          "name": "Fanta",
+          "description": "0,33l",
+          "price": "1,80 €",
+          "badges": []
+        },
+        {
+          "id": "getraenke-5",
+          "nr": 84,
+          "name": "Uludag",
+          "description": "Türkische Brause, 0,33l",
+          "price": "1,80 €",
+          "badges": []
+        },
+        {
+          "id": "getraenke-6",
+          "nr": 85,
+          "name": "Mineralwasser",
+          "description": "0,50l",
+          "price": "1,80 €",
+          "badges": []
+        },
+        {
+          "id": "getraenke-7",
+          "nr": 86,
+          "name": "Malzbier",
+          "description": "0,33l",
+          "price": "2,50 €",
+          "badges": []
+        },
+        {
+          "id": "getraenke-8",
+          "nr": 87,
+          "name": "Flaschenbier",
+          "description": "0,33l",
+          "price": "2,50 €",
+          "badges": []
+        },
+        {
+          "id": "getraenke-9",
+          "nr": 88,
+          "name": "Schwarzer Tee",
+          "description": "",
+          "price": "1,50 €",
+          "badges": []
+        }
+      ]
+    }
+  ],
+  "config": {
+    "itemsPerPage": 12,
+    "pageFormat": "A4-landscape",
+    "columnLayout": "2-column",
+    "pageDimensions": {
+      "width": "841.89pt",
+      "height": "595.276pt"
+    }
+  }
+}
