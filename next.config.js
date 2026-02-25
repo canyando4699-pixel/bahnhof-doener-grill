@@ -42,7 +42,7 @@ const nextConfig = {
             // Next.js App Router emits dynamic inline bootstrap scripts that cannot be
             // statically hashed. 'unsafe-inline' is required here. For stricter CSP,
             // implement nonce-based headers via Next.js middleware instead.
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self';",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://api.fontshare.com; img-src 'self' data:; font-src 'self' data: https://cdn.fontshare.com; connect-src 'self';",
           },
         ],
       },

@@ -18,7 +18,7 @@ export default function MenuSection({ title, items }: MenuSectionProps) {
   return (
     <section className="py-12">
       <div className="max-w-container mx-auto px-[var(--container-px)]">
-        <h2 className="text-2xl md:text-3xl font-bold text-[var(--color-text)] mb-8 text-center">
+        <h2 className="font-display text-3xl md:text-4xl text-[var(--color-text)] mb-8 text-center">
           {title}
         </h2>
 

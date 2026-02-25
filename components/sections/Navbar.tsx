@@ -4,9 +4,23 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-function NavBadge({ children }: { children: React.ReactNode }) {
+function NavBtn({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-red-950 ring-2 ring-orange-500 shrink-0">
+    <span
+      className="inline-flex items-center justify-center gap-1.5 text-[12px] text-white/90 select-none transition-opacity hover:opacity-70"
+      style={{
+        fontFamily: 'var(--font-britney)',
+        backgroundImage: "url('/images/Button4.png')",
+        backgroundSize: '100% 100%',
+        backgroundRepeat: 'no-repeat',
+        paddingInline: '1.5rem',
+        paddingBlock: '0',
+        height: '36px',
+        minWidth: '110px',
+        textShadow: '0 1px 3px rgba(0,0,0,0.6)',
+        lineHeight: '1',
+      }}
+    >
       {children}
     </span>
   );
@@ -14,7 +28,7 @@ function NavBadge({ children }: { children: React.ReactNode }) {
 
 function IconMenu() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
       <path d="M3 6h18M3 12h18M3 18h18" />
     </svg>
   );
@@ -22,7 +36,7 @@ function IconMenu() {
 
 function IconMapPin() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
       <circle cx="12" cy="9" r="2.5" />
     </svg>
@@ -31,7 +45,7 @@ function IconMapPin() {
 
 function IconPhone() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <rect x="7" y="2" width="10" height="20" rx="2" />
       <line x1="12" y1="18" x2="12" y2="18.5" strokeWidth="2.5" strokeLinecap="round" />
     </svg>
@@ -65,23 +79,20 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium transition-colors"
-              >
-                <NavBadge>{link.icon}</NavBadge>
-                {link.label}
+              <Link key={link.href} href={link.href}>
+                <NavBtn>
+                  {link.icon}
+                  {link.label}
+                </NavBtn>
               </Link>
             ))}
-            <a
-              href="tel:06451240925"
-              className="flex items-center gap-2 text-white/80 hover:text-white text-sm font-medium transition-colors"
-            >
-              <NavBadge><IconPhone /></NavBadge>
-              06451 240925
+            <a href="tel:06451240925">
+              <NavBtn>
+                <IconPhone />
+                06451 240925
+              </NavBtn>
             </a>
           </div>
 
@@ -108,25 +119,20 @@ export default function Navbar() {
 
       {isOpen && (
         <div className="md:hidden bg-black/90 backdrop-blur-sm" id="mobile-menu">
-          <div className="px-4 pt-2 pb-4 space-y-1">
+          <div className="px-4 pt-2 pb-4 space-y-2">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="flex items-center gap-3 text-white/80 hover:text-white px-3 py-2 text-base font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                <NavBadge>{link.icon}</NavBadge>
-                {link.label}
+              <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block">
+                <NavBtn>
+                  {link.icon}
+                  {link.label}
+                </NavBtn>
               </Link>
             ))}
-            <a
-              href="tel:06451240925"
-              className="flex items-center gap-3 text-white/80 hover:text-white px-3 py-2 text-base font-medium"
-              onClick={() => setIsOpen(false)}
-            >
-              <NavBadge><IconPhone /></NavBadge>
-              06451 240925
+            <a href="tel:06451240925" className="block" onClick={() => setIsOpen(false)}>
+              <NavBtn>
+                <IconPhone />
+                06451 240925
+              </NavBtn>
             </a>
           </div>
         </div>

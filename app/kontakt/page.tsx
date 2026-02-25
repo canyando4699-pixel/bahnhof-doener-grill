@@ -8,7 +8,7 @@ export default function KontaktPage() {
   return (
     <main className="min-h-screen pt-20">
       <div className="max-w-container mx-auto px-[var(--container-px)] py-16 max-w-2xl">
-        <h1 className="text-4xl font-bold text-[var(--color-text)] mb-10">Kontakt</h1>
+        <h1 className="font-display text-5xl text-[var(--color-text)] mb-10">Kontakt</h1>
 
         <div className="space-y-8 text-muted text-lg">
           <div>

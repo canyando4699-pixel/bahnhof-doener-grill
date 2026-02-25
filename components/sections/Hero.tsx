@@ -26,13 +26,13 @@ export default function Hero() {
       <div className="relative z-10 flex h-full min-h-[580px] md:min-h-[700px] items-center">
         <div className="max-w-container mx-auto px-[var(--container-px)] w-full">
           <div className="max-w-lg">
-            <h1 className="text-4xl md:text-6xl leading-tight" style={{ fontFamily: 'var(--font-pacifico)' }}>
+            <h1 className="font-display text-5xl md:text-7xl">
               Frisch vom Spieß.
             </h1>
-            <p className="mt-4 text-base md:text-lg text-[var(--color-text-muted)]">
+            <p className="mt-5 text-lg leading-relaxed text-[var(--color-text-muted)] max-w-sm">
               Knuspriges Brot. Saftiges Fleisch. Echte Frische.
             </p>
-            <div className="mt-8">
+            <div className="mt-9">
               <Link
                 href="/menu"
                 className="inline-block bg-accent hover:bg-accent-hover text-white px-8 py-3 rounded font-semibold transition-colors"

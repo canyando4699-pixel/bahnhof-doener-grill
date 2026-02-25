@@ -16,8 +16,15 @@ module.exports = {
         accent:     'var(--color-accent)',
         'accent-hover':'var(--color-accent-hover)',
       },
+      fontFamily: {
+        display: ['Britney', 'cursive'],
+        body:    ['var(--font-inter)', 'system-ui', 'sans-serif'],
+      },
       maxWidth: {
         container: 'var(--container-max)',
+      },
+      lineHeight: {
+        relaxed: '1.7',
       },
     },
   },

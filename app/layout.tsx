@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, Pacifico } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 
@@ -45,8 +45,7 @@ const jsonLd = {
   ],
 } as const;
 
-const inter = Inter({ subsets: ['latin'], display: 'swap' });
-const pacifico = Pacifico({ subsets: ['latin'], weight: '400', display: 'swap', variable: '--font-pacifico' });
+const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
 
 export const metadata: Metadata = {
   title: 'Bahnhof Döner Grill — Frisch vom Spieß | Frankenberg',
@@ -68,12 +67,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="de">
       <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=britney@1&display=swap"
+          rel="stylesheet"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.className} ${pacifico.variable} bg-bg text-[var(--color-text)]`}>
+      <body className={`${inter.variable} font-body bg-bg text-[var(--color-text)]`}>
         <Navbar />
         {children}
         <Footer />

@@ -7,10 +7,10 @@ export default function PizzaSection() {
       <div className="max-w-container mx-auto px-[var(--container-px)]">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl text-[var(--color-text)] mb-4" style={{ fontFamily: 'var(--font-pacifico)' }}>
+            <h2 className="font-display text-4xl md:text-5xl text-[var(--color-text)] mb-5">
               Auch Pizza? Natürlich.
             </h2>
-            <p className="text-muted text-lg leading-relaxed mb-8">
+            <p className="text-muted text-lg leading-relaxed mb-9">
               Neben unserem klassischen Döner gibt es bei uns auch knusprige,
               heiße Pizza – frisch aus dem Ofen.
             </p>

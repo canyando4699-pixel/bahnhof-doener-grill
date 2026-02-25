@@ -13,10 +13,10 @@ export default function MenuPage() {
     <div className="min-h-screen pt-20">
       <div className="py-12">
         <div className="max-w-container mx-auto px-[var(--container-px)] mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-center text-[var(--color-text)] mb-4">
+          <h1 className="font-display text-5xl md:text-6xl text-center text-[var(--color-text)] mb-5">
             Unsere Speisekarte
           </h1>
-          <p className="text-center text-muted text-lg">
+          <p className="text-center text-muted text-lg leading-relaxed">
             Alle Gerichte werden frisch für Sie zubereitet
           </p>
         </div>
