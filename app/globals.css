@@ -46,3 +46,64 @@
     letter-spacing: -0.01em;
   }
 }
+
+/* ── Hero Entrance ─────────────────────────────────── */
+@keyframes hero-fade-in {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-fade-in {
+  animation: hero-fade-in 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+.hero-delay-1 { animation-delay: 0.5s; }
+.hero-delay-2 { animation-delay: 0.7s; }
+
+/* ── Scroll Indicator ──────────────────────────────── */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+.animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+
+/* ── 3D Scene Float Effects ────────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-16px); }
+}
+@keyframes float-delayed {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-20px); }
+}
+.animate-float         { animation: float          6s ease-in-out infinite; }
+.animate-float-delayed { animation: float-delayed  8s ease-in-out 2s infinite; }
+.animate-float-slow    { animation: float-slow    10s ease-in-out 1s infinite; }
+
+/* ── Scroll Reveal ─────────────────────────────────── */
+@keyframes scroll-reveal-anim {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-reveal {
+    animation: scroll-reveal-anim 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+    animation-timeline: view();
+    animation-range: entry 5% entry 35%;
+  }
+}
+
+/* ── Accessibility ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .hero-fade-in,
+  .animate-bounce-slow,
+  .animate-float,
+  .animate-float-delayed,
+  .animate-float-slow {
+    animation: none;
+  }
+}

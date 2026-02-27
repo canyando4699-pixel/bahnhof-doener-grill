@@ -1,30 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-
-function NavBtn({ children }: { children: React.ReactNode }) {
-  return (
-    <span
-      className="inline-flex items-center justify-center gap-1.5 text-[12px] text-white/90 select-none transition-opacity hover:opacity-70"
-      style={{
-        fontFamily: 'var(--font-britney)',
-        backgroundImage: "url('/images/Button4.png')",
-        backgroundSize: '100% 100%',
-        backgroundRepeat: 'no-repeat',
-        paddingInline: '1.5rem',
-        paddingBlock: '0',
-        height: '36px',
-        minWidth: '110px',
-        textShadow: '0 1px 3px rgba(0,0,0,0.6)',
-        lineHeight: '1',
-      }}
-    >
-      {children}
-    </span>
-  );
-}
+import Button4 from '@/components/ui/Button4';
 
 function IconMenu() {
   return (
@@ -59,10 +38,21 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <nav
-      className="absolute top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/60 to-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? 'bg-black/70 backdrop-blur-xl'
+          : 'bg-gradient-to-b from-black/60 to-transparent'
+      }`}
       role="navigation"
       aria-label="Hauptnavigation"
     >
@@ -82,17 +72,17 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
-                <NavBtn>
+                <Button4>
                   {link.icon}
                   {link.label}
-                </NavBtn>
+                </Button4>
               </Link>
             ))}
             <a href="tel:06451240925">
-              <NavBtn>
+              <Button4>
                 <IconPhone />
                 06451 240925
-              </NavBtn>
+              </Button4>
             </a>
           </div>
 
@@ -122,17 +112,17 @@ export default function Navbar() {
           <div className="px-4 pt-2 pb-4 space-y-2">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className="block">
-                <NavBtn>
+                <Button4>
                   {link.icon}
                   {link.label}
-                </NavBtn>
+                </Button4>
               </Link>
             ))}
             <a href="tel:06451240925" className="block" onClick={() => setIsOpen(false)}>
-              <NavBtn>
+              <Button4>
                 <IconPhone />
                 06451 240925
-              </NavBtn>
+              </Button4>
             </a>
           </div>
         </div>

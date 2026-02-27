@@ -27,20 +27,20 @@ export default function DatenschutzPage() {
 
           <div>
             <h2 className="text-lg font-semibold text-[var(--color-text)] mb-2">2. Hosting</h2>
-            <p>Diese Website wird gehostet bei:</p>
+            <p>Diese Website wird bei folgendem Anbieter gehostet:</p>
             <p className="mt-2">
-              STRATO AG<br />
-              Otto-Ostrowski-Straße 7<br />
-              10249 Berlin<br />
-              <a href="https://www.strato.de" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--color-text)] transition-colors">
-                www.strato.de
-              </a>
+              Vercel Inc.<br />
+              440 N Barranca Ave #4133<br />
+              Covina, CA 91723<br />
+              USA
             </p>
             <p className="mt-2">
-              Beim Besuch dieser Website erfasst STRATO automatisch Server-Logfiles (IP-Adresse,
-              Zeitpunkt des Zugriffs, Browsertyp, Betriebssystem, Referrer-URL). Die Verarbeitung
-              erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Mit STRATO besteht ein Vertrag
-              zur Auftragsverarbeitung gemäß Art. 28 DSGVO.
+              Beim Aufruf der Website werden durch Vercel automatisch Server-Logfiles erfasst
+              (z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, Browsertyp, Betriebssystem).
+              Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO
+              (berechtigtes Interesse an einem sicheren und stabilen Betrieb der Website).
+              Es kann eine Datenübermittlung in die USA stattfinden.
+              Vercel ist nach dem EU-U.S. Data Privacy Framework zertifiziert.
             </p>
           </div>
 
