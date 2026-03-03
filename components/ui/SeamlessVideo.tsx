@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 interface SeamlessVideoProps {
   webmSrc: string;
@@ -21,13 +21,24 @@ export default function SeamlessVideo({
 }: SeamlessVideoProps) {
   const aRef = useRef<HTMLVideoElement>(null);
   const bRef = useRef<HTMLVideoElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const activeRef = useRef<'a' | 'b'>('a');
   const fadingRef = useRef(false);
+  const [needsTap, setNeedsTap] = useState(false);
 
   useEffect(() => {
     const a = aRef.current;
     const b = bRef.current;
-    if (!a || !b) return;
+    const wrapper = wrapperRef.current;
+    if (!a || !b || !wrapper) return;
+
+    const getActive = () => (activeRef.current === 'a' ? a : b);
+
+    const playActive = () =>
+      getActive()
+        .play()
+        .then(() => setNeedsTap(false))
+        .catch(() => setNeedsTap(true));
 
     const swap = (outgoing: HTMLVideoElement, incoming: HTMLVideoElement, dur: number) => {
       fadingRef.current = true;
@@ -55,7 +66,7 @@ export default function SeamlessVideo({
     };
 
     const handleTimeUpdate = (sender: HTMLVideoElement) => {
-      const active = activeRef.current === 'a' ? a : b;
+      const active = getActive();
       if (sender !== active) return;
       if (fadingRef.current) return;
       if (!active.duration || !Number.isFinite(active.duration)) return;
@@ -63,40 +74,49 @@ export default function SeamlessVideo({
       const remaining = active.duration - active.currentTime;
       if (remaining > fadeTime) return;
 
-      const standby = active === a ? b : a;
-      swap(active, standby, Math.min(remaining, fadeTime));
+      swap(active, active === a ? b : a, Math.min(remaining, fadeTime));
     };
 
-    // Fallback: if video ends without the timeupdate crossfade having fired,
-    // do an instant swap so playback never freezes.
+    // Fallback: instant swap if video ends without crossfade
     const handleEnded = (sender: HTMLVideoElement) => {
-      const active = activeRef.current === 'a' ? a : b;
-      if (sender !== active) return;
-      if (fadingRef.current) return;
-      const standby = active === a ? b : a;
-      swap(active, standby, 0);
+      const active = getActive();
+      if (sender !== active || fadingRef.current) return;
+      swap(active, active === a ? b : a, 0);
     };
 
-    const onATime = () => handleTimeUpdate(a);
-    const onBTime = () => handleTimeUpdate(b);
-    const onAEnd  = () => handleEnded(a);
-    const onBEnd  = () => handleEnded(b);
+    // IntersectionObserver: play only when visible (fixes iOS below-fold autoplay)
+    const observer = new IntersectionObserver(
+      (entries) => { if (entries[0].isIntersecting) playActive(); },
+      { threshold: 0.1 }
+    );
+    observer.observe(wrapper);
 
-    a.addEventListener('timeupdate', onATime);
-    b.addEventListener('timeupdate', onBTime);
-    a.addEventListener('ended', onAEnd);
-    b.addEventListener('ended', onBEnd);
+    // BFCache restore (iOS Safari back button)
+    const handlePageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) playActive();
+    };
+
+    // Tab visibility resume
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible') playActive();
+    };
+
+    a.addEventListener('timeupdate', () => handleTimeUpdate(a));
+    b.addEventListener('timeupdate', () => handleTimeUpdate(b));
+    a.addEventListener('ended', () => handleEnded(a));
+    b.addEventListener('ended', () => handleEnded(b));
+    window.addEventListener('pageshow', handlePageShow);
+    document.addEventListener('visibilitychange', handleVisibility);
 
     return () => {
-      a.removeEventListener('timeupdate', onATime);
-      b.removeEventListener('timeupdate', onBTime);
-      a.removeEventListener('ended', onAEnd);
-      b.removeEventListener('ended', onBEnd);
+      observer.disconnect();
+      window.removeEventListener('pageshow', handlePageShow);
+      document.removeEventListener('visibilitychange', handleVisibility);
     };
   }, [fadeTime]);
 
   return (
-    <div className={wrapperClassName} aria-hidden="true">
+    <div ref={wrapperRef} className={wrapperClassName} aria-hidden="true">
       {/* Video A — primary */}
       <video
         ref={aRef}
@@ -125,8 +145,30 @@ export default function SeamlessVideo({
         <source src={mp4Src} type="video/mp4" />
       </video>
 
-      {/* Loop-transition overlay */}
       <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+
+      {/* Tap-to-play overlay (Low Power Mode / autoplay blocked) */}
+      {needsTap && (
+        <button
+          type="button"
+          onClick={() => {
+            const active = activeRef.current === 'a' ? aRef.current : bRef.current;
+            active?.play().then(() => setNeedsTap(false)).catch(() => {});
+          }}
+          className="absolute inset-0 flex items-center justify-center bg-black/30 cursor-pointer"
+          aria-label="Video abspielen"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 80 80"
+            className="w-16 h-16 text-white drop-shadow-lg"
+            fill="currentColor"
+          >
+            <circle cx="40" cy="40" r="38" fill="rgba(0,0,0,0.45)" stroke="white" strokeWidth="2" />
+            <polygon points="32,24 60,40 32,56" />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }
