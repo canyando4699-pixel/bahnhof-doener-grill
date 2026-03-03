@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import SeamlessVideo from '@/components/ui/SeamlessVideo';
 
 const HeroCanvas = dynamic(() => import('@/components/3d/HeroCanvas'), { ssr: false });
 
@@ -23,22 +23,20 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-[580px] md:min-h-[700px] text-[var(--color-text)] overflow-hidden bg-black">
-      {/* Hero Image — rechte 60% */}
-      <div className="absolute top-0 bottom-0 right-0 w-[60%]" aria-hidden="true">
-        <Image
-          src="/images/hero.webp"
-          alt="Bahnhof Döner Grill — frisch vom Spieß"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="60vw"
-        />
-      </div>
+    <section className="relative md:min-h-[700px] text-[var(--color-text)] overflow-hidden bg-black">
+      {/* Hero Video */}
+      <SeamlessVideo
+        wrapperClassName="relative w-full overflow-hidden md:absolute md:inset-0"
+        videoClassName="w-full h-auto md:h-full md:object-cover md:object-center"
+        poster="/images/hero.webp"
+        webmSrc="/images/Hero_Video.webm"
+        mp4Src="/images/Hero%20Video.mp4"
+        fadeTime={1.5}
+      />
 
-      {/* Gradient */}
+      {/* Gradient — Desktop only */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/10"
+        className="hidden md:block absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/10"
         aria-hidden="true"
       />
 
@@ -46,7 +44,7 @@ export default function Hero() {
       <HeroCanvas />
 
       {/* Content */}
-      <div className="relative z-10 flex h-full min-h-[580px] md:min-h-[700px] items-center">
+      <div className="relative z-10 md:absolute md:inset-0 md:flex md:items-center py-16 md:py-0">
         <div className="max-w-container mx-auto px-[var(--container-px)] w-full">
           <div ref={contentRef} className="max-w-lg">
             <h1 className="font-display text-5xl md:text-7xl hero-fade-in">

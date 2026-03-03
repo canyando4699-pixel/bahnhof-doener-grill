@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import Link from 'next/link';
+import SeamlessVideo from '@/components/ui/SeamlessVideo';
 
 export default function PizzaSection() {
   return (
@@ -22,17 +22,13 @@ export default function PizzaSection() {
             </Link>
           </div>
 
-          <div className="relative aspect-square max-w-md mx-auto md:mx-0 md:ml-auto">
-            <Image
-              src="/images/pizza.avif"
-              alt="Frische Pizza"
-              width={500}
-              height={500}
-              loading="lazy"
-              className="rounded-lg object-cover"
-              sizes="(max-width: 768px) 100vw, 500px"
-            />
-          </div>
+          <SeamlessVideo
+            wrapperClassName="relative max-w-md mx-auto md:mx-0 md:ml-auto overflow-hidden rounded-lg"
+            videoClassName="w-full h-auto"
+            webmSrc="/images/Pizza_Video.webm"
+            mp4Src="/images/Pizza_Video.mp4"
+            fadeTime={1.5}
+          />
         </div>
       </div>
     </section>
