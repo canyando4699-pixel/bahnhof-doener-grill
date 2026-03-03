@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
@@ -26,14 +25,11 @@ export default function Hero() {
     <section className="relative min-h-[580px] md:min-h-[700px] text-[var(--color-text)] overflow-hidden bg-black">
       {/* Hero Image — rechte 60% */}
       <div className="absolute top-0 bottom-0 right-0 w-[60%]" aria-hidden="true">
-        <Image
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
           src="/images/hero.webp"
           alt="Bahnhof Döner Grill — frisch vom Spieß"
-          fill
-          priority
-          unoptimized
-          className="object-cover object-center"
-          sizes="60vw"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
       </div>
 

@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 export default function PizzaSection() {
@@ -23,15 +22,12 @@ export default function PizzaSection() {
           </div>
 
           <div className="relative aspect-square max-w-md mx-auto md:mx-0 md:ml-auto">
-            <Image
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src="/images/pizza.avif"
               alt="Frische Pizza"
-              width={500}
-              height={500}
               loading="lazy"
-              unoptimized
-              className="rounded-lg object-cover"
-              sizes="(max-width: 768px) 100vw, 500px"
+              className="rounded-lg object-cover w-full h-full"
             />
           </div>
         </div>
