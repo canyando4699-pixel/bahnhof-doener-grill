@@ -31,6 +31,7 @@ export default function Hero() {
           alt="Bahnhof Döner Grill — frisch vom Spieß"
           fill
           priority
+          unoptimized
           className="object-cover object-center"
           sizes="60vw"
         />

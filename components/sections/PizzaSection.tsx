@@ -29,6 +29,7 @@ export default function PizzaSection() {
               width={500}
               height={500}
               loading="lazy"
+              unoptimized
               className="rounded-lg object-cover"
               sizes="(max-width: 768px) 100vw, 500px"
             />
