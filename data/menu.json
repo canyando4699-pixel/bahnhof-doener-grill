@@ -402,7 +402,7 @@
     },
     {
       "id": "lahmacun",
-      "name": "Lahmacun (Türkische Pizza)",
+      "name": "Lahmacun",
       "icon": "lahmacun",
       "pageBreak": true,
       "items": [
@@ -977,7 +977,7 @@
     },
     {
       "id": "pide",
-      "name": "Pide (Schiffchen)",
+      "name": "Pide",
       "icon": "pide",
       "pageBreak": true,
       "items": [

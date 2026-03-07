@@ -10,13 +10,14 @@ interface MenuItem {
 }
 
 interface MenuSectionProps {
+  id: string;
   title: string;
   items: MenuItem[];
 }
 
-export default function MenuSection({ title, items }: MenuSectionProps) {
+export default function MenuSection({ id, title, items }: MenuSectionProps) {
   return (
-    <section className="py-12">
+    <section id={id} className="py-12 scroll-mt-32 lg:scroll-mt-24">
       <div className="max-w-container mx-auto px-[var(--container-px)]">
         <h2 className="font-display text-3xl md:text-4xl text-[var(--color-text)] mb-8 text-center">
           {title}
