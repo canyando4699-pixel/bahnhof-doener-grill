@@ -50,7 +50,7 @@ export default function MenuSidebar({ categories }: { categories: Category[] }) 
     <>
       {/* ── Mobile: sticky horizontal tab bar ─────────────────── */}
       <div
-        className="lg:hidden sticky top-16 z-30 bg-bg/95 backdrop-blur-sm border-b border-[var(--color-border)]"
+        className="lg:hidden sticky top-32 z-30 bg-bg/95 backdrop-blur-sm border-b border-[var(--color-border)]"
         aria-label="Kategorien"
       >
         <div className="flex overflow-x-auto gap-2 px-[var(--container-px)] py-3 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
