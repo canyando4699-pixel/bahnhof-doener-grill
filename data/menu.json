@@ -2,7 +2,7 @@
   "restaurant": {
     "name": "Bahnhof Döner Grill",
     "address": "Am Bahnhof 10, 35066 Frankenberg",
-    "lastUpdated": "2026-02-20",
+    "lastUpdated": "2026-05-14",
     "source": "speisekarte.docx",
     "branding": {
       "primaryColor": "#FC683F",
@@ -43,7 +43,7 @@
           "nr": 1,
           "name": "Drehspieß mit Fladenbrot",
           "description": "Hackfleisch vom Kalb mit Salat und Soße",
-          "price": "7,00 €",
+          "price": "7,50 €",
           "badges": []
         },
         {
@@ -51,7 +51,7 @@
           "nr": 4,
           "name": "Hawaii Drehspieß",
           "description": "Hackfleisch vom Kalb mit Salat und Soße",
-          "price": "8,00 €",
+          "price": "8,50 €",
           "badges": []
         },
         {
@@ -59,7 +59,7 @@
           "nr": 5,
           "name": "Hähnchen Döner",
           "description": "mit Salat und Soße",
-          "price": "7,00 €",
+          "price": "7,50 €",
           "badges": []
         },
         {
@@ -67,7 +67,7 @@
           "nr": 6,
           "name": "Drehspieß mit Knoblauchwurst",
           "description": "Hackfleisch vom Kalb mit Salat und Soße",
-          "price": "8,50 €",
+          "price": "9,00 €",
           "badges": []
         },
         {
@@ -75,7 +75,7 @@
           "nr": 7,
           "name": "Drehspieß mit Weichkäse",
           "description": "Hackfleisch vom Kalb mit Salat und Soße",
-          "price": "8,00 €",
+          "price": "8,50 €",
           "badges": []
         },
         {
@@ -83,7 +83,7 @@
           "nr": 8,
           "name": "Vegetarischer Döner",
           "description": "mit Salat und Soße",
-          "price": "7,00 €",
+          "price": "7,50 €",
           "badges": ["vegetarisch"]
         },
         {
@@ -91,7 +91,7 @@
           "nr": 9,
           "name": "Hippi Döner",
           "description": "im Fladenbrot mit Pommes, Fleisch und Soße",
-          "price": "8,00 €",
+          "price": "8,50 €",
           "badges": []
         },
         {
@@ -99,7 +99,7 @@
           "nr": 10,
           "name": "Drehspieß Spezial im Fladenbrot",
           "description": "doppelt Fleisch, Hackfleisch vom Kalb",
-          "price": "8,50 €",
+          "price": "10,00 €",
           "badges": []
         }
       ]
@@ -115,7 +115,7 @@
           "nr": 11,
           "name": "Drehspießteller",
           "description": "Hackfleisch vom Kalb mit gemischtem Salat",
-          "price": "10,00 €",
+          "price": "12,00 €",
           "badges": []
         },
         {
@@ -123,7 +123,7 @@
           "nr": 11,
           "name": "Drehspießteller",
           "description": "Hackfleisch vom Kalb mit Pommes Frites",
-          "price": "10,00 €",
+          "price": "12,00 €",
           "badges": []
         },
         {
@@ -131,7 +131,7 @@
           "nr": 12,
           "name": "Drehspießteller",
           "description": "Hackfleisch vom Kalb mit Weichkäse und gemischtem Salat",
-          "price": "11,00 €",
+          "price": "13,00 €",
           "badges": []
         },
         {
@@ -139,7 +139,7 @@
           "nr": 13,
           "name": "Drehspießteller",
           "description": "Hackfleisch vom Kalb mit Pommes und gemischtem Salat",
-          "price": "11,00 €",
+          "price": "13,00 €",
           "badges": []
         },
         {
@@ -147,7 +147,7 @@
           "nr": 14,
           "name": "Drehspießteller",
           "description": "Hackfleisch vom Kalb mit Reis und gemischtem Salat",
-          "price": "11,00 €",
+          "price": "13,00 €",
           "badges": []
         },
         {
@@ -155,7 +155,7 @@
           "nr": 15,
           "name": "Drehspieß Portion (normal)",
           "description": "Hackfleisch vom Kalb",
-          "price": "7,50 €",
+          "price": "8,50 €",
           "badges": []
         },
         {
@@ -163,7 +163,7 @@
           "nr": 16,
           "name": "Drehspieß Portion (doppelt)",
           "description": "Hackfleisch vom Kalb",
-          "price": "10,00 €",
+          "price": "12,00 €",
           "badges": []
         },
         {
@@ -171,7 +171,7 @@
           "nr": 17,
           "name": "Schnitzel Döner im Fladenbrot",
           "description": "Hackfleisch vom Kalb mit Salat und Soße",
-          "price": "8,50 €",
+          "price": "9,00 €",
           "badges": []
         }
       ]
@@ -187,7 +187,7 @@
           "nr": 18,
           "name": "Port. Pommes",
           "description": "(klein)",
-          "price": "3,00 €",
+          "price": "3,50 €",
           "badges": []
         },
         {
@@ -195,7 +195,7 @@
           "nr": 19,
           "name": "Port. Pommes",
           "description": "(groß)",
-          "price": "4,00 €",
+          "price": "4,50 €",
           "badges": []
         },
         {
@@ -219,7 +219,7 @@
           "nr": 22,
           "name": "Bratwurst",
           "description": "",
-          "price": "4,00 €",
+          "price": "4,50 €",
           "badges": []
         },
         {
@@ -227,7 +227,7 @@
           "nr": 23,
           "name": "Currywurst",
           "description": "mit Curry-Sauce",
-          "price": "4,50 €",
+          "price": "5,00 €",
           "badges": []
         },
         {
@@ -235,7 +235,7 @@
           "nr": 24,
           "name": "Jägerwurst",
           "description": "mit Jäger-Sauce",
-          "price": "4,50 €",
+          "price": "5,00 €",
           "badges": []
         },
         {
@@ -243,7 +243,7 @@
           "nr": 25,
           "name": "Zigeunerwurst",
           "description": "mit Zigeuner-Sauce",
-          "price": "4,50 €",
+          "price": "5,00 €",
           "badges": []
         },
         {
@@ -251,7 +251,7 @@
           "nr": 26,
           "name": "Falafelteller",
           "description": "mit Pommes und Salat",
-          "price": "11,00 €",
+          "price": "13,00 €",
           "badges": ["vegetarisch"]
         },
         {
@@ -259,7 +259,7 @@
           "nr": 26,
           "name": "Falafelteller",
           "description": "mit Pommes",
-          "price": "10,00 €",
+          "price": "12,00 €",
           "badges": ["vegetarisch"]
         },
         {
@@ -267,7 +267,7 @@
           "nr": 26,
           "name": "Falafelteller",
           "description": "mit Salat",
-          "price": "10,00 €",
+          "price": "12,00 €",
           "badges": ["vegetarisch"]
         },
         {
@@ -275,7 +275,7 @@
           "nr": 27,
           "name": "1/2 Hähnchen",
           "description": "mit Brot",
-          "price": "7,00 €",
+          "price": "8,00 €",
           "badges": []
         },
         {
@@ -283,7 +283,7 @@
           "nr": 27,
           "name": "1/2 Hähnchen",
           "description": "mit Pommes",
-          "price": "10,00 €",
+          "price": "12,00 €",
           "badges": []
         },
         {
@@ -291,7 +291,7 @@
           "nr": 27,
           "name": "1/2 Hähnchen",
           "description": "mit Pommes und Salat",
-          "price": "11,00 €",
+          "price": "13,00 €",
           "badges": []
         },
         {
@@ -299,7 +299,7 @@
           "nr": 28,
           "name": "Falafel Döner",
           "description": "mit Salat und Soße",
-          "price": "7,00 €",
+          "price": "7,50 €",
           "badges": ["vegetarisch"]
         },
         {
@@ -307,7 +307,7 @@
           "nr": 29,
           "name": "Hamburger",
           "description": "",
-          "price": "3,00 €",
+          "price": "4,50 €",
           "badges": []
         },
         {
@@ -315,7 +315,7 @@
           "nr": 30,
           "name": "Doppel Hamburger",
           "description": "doppelt belegt",
-          "price": "4,00 €",
+          "price": "5,50 €",
           "badges": []
         },
         {
@@ -323,7 +323,7 @@
           "nr": 31,
           "name": "Cheeseburger",
           "description": "mit Käse",
-          "price": "3,50 €",
+          "price": "4,00 €",
           "badges": []
         },
         {
@@ -331,7 +331,7 @@
           "nr": 32,
           "name": "Chicken Nuggets",
           "description": "mit Pommes",
-          "price": "7,00 €",
+          "price": "8,00 €",
           "badges": []
         },
         {
@@ -339,7 +339,7 @@
           "nr": 33,
           "name": "Hawaii-Burger",
           "description": "mit Ananas",
-          "price": "3,50 €",
+          "price": "4,00 €",
           "badges": []
         },
         {
@@ -347,7 +347,7 @@
           "nr": 34,
           "name": "Dönerburger",
           "description": "mit Dönerfleisch",
-          "price": "8,50 €",
+          "price": "10,00 €",
           "badges": []
         },
         {
@@ -355,7 +355,7 @@
           "nr": 34,
           "name": "Hähnchen-Dönerburger",
           "description": "mit Hähnchen-Dönerfleisch",
-          "price": "8,50 €",
+          "price": "10,00 €",
           "badges": []
         },
         {
@@ -363,7 +363,7 @@
           "nr": 35,
           "name": "Schnitzel",
           "description": "mit Pommes",
-          "price": "10,00 €",
+          "price": "12,00 €",
           "badges": []
         },
         {
@@ -371,7 +371,7 @@
           "nr": 35,
           "name": "Schnitzel",
           "description": "mit Pommes und Salat",
-          "price": "11,00 €",
+          "price": "13,00 €",
           "badges": []
         },
         {
@@ -379,7 +379,7 @@
           "nr": 36,
           "name": "Chickenburger",
           "description": "mit Hähnchen",
-          "price": "3,50 €",
+          "price": "4,00 €",
           "badges": []
         },
         {
@@ -395,7 +395,7 @@
           "nr": 36,
           "name": "Börek",
           "description": "mit Salat und Soße",
-          "price": "10,00 €",
+          "price": "11,00 €",
           "badges": []
         }
       ]
@@ -411,7 +411,7 @@
           "nr": 37,
           "name": "Lahmacun",
           "description": "mit Fleisch, Weichkäse, Salat und Soße",
-          "price": "8,50 €",
+          "price": "10,00 €",
           "badges": []
         },
         {
@@ -419,7 +419,7 @@
           "nr": 38,
           "name": "Lahmacun",
           "description": "mit Salat",
-          "price": "6,00 €",
+          "price": "6,50 €",
           "badges": ["vegetarisch"]
         },
         {
@@ -427,7 +427,7 @@
           "nr": 38,
           "name": "Lahmacun",
           "description": "mit Dönerfleisch und Salat",
-          "price": "8,00 €",
+          "price": "9,00 €",
           "badges": []
         },
         {
@@ -435,7 +435,7 @@
           "nr": 38,
           "name": "Lahmacun",
           "description": "mit doppelt Fleisch und Salat",
-          "price": "8,50 €",
+          "price": "10,00 €",
           "badges": []
         },
         {
@@ -443,7 +443,7 @@
           "nr": 38,
           "name": "Lahmacun",
           "description": "mit Weichkäse und Salat",
-          "price": "7,00 €",
+          "price": "7,50 €",
           "badges": ["vegetarisch"]
         },
         {
@@ -451,7 +451,7 @@
           "nr": 39,
           "name": "Sandwich",
           "description": "mit Knoblauchwurst",
-          "price": "8,00 €",
+          "price": "9,00 €",
           "badges": []
         },
         {
@@ -476,8 +476,8 @@
           "name": "Margharita Pizza",
           "description": "mit Tomatensoße und Käse",
           "prices": {
-            "klein": "6,00 €",
-            "groß": "7,50 €"
+            "klein": "7,00 €",
+            "groß": "9,00 €"
           },
           "badges": ["vegetarisch"]
         },
@@ -487,8 +487,8 @@
           "name": "Pizza Salami",
           "description": "mit Tomatensoße, Käse und Salami",
           "prices": {
-            "klein": "6,50 €",
-            "groß": "8,50 €"
+            "klein": "7,50 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -498,8 +498,8 @@
           "name": "Pizza Schinken",
           "description": "mit Tomatensoße, Käse und Schinken",
           "prices": {
-            "klein": "6,50 €",
-            "groß": "8,50 €"
+            "klein": "7,50 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -509,8 +509,8 @@
           "name": "Pizza Pilzen",
           "description": "mit Tomatensoße, Käse und Pilzen",
           "prices": {
-            "klein": "6,50 €",
-            "groß": "8,50 €"
+            "klein": "7,50 €",
+            "groß": "10,00 €"
           },
           "badges": ["vegetarisch"]
         },
@@ -520,8 +520,8 @@
           "name": "Pizza Marinara",
           "description": "mit Tomatensoße, Käse und Meeresfrüchte",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -531,8 +531,8 @@
           "name": "Scampi Pizza",
           "description": "mit Tomatensoße, Käse und Krabben",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -542,8 +542,8 @@
           "name": "Bolognese Pizza",
           "description": "mit Tomatensoße, Käse und Hackfleisch",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -553,8 +553,8 @@
           "name": "Pizza Döner",
           "description": "mit Tomatensoße, Käse und Dönerfleisch",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         },
@@ -564,8 +564,8 @@
           "name": "Hawaii Pizza",
           "description": "mit Tomatensoße, Käse, Schinken und Ananas",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -575,8 +575,8 @@
           "name": "Mozzarella Pizza",
           "description": "mit Tomatensoße, Käse, Mozzarella und frischen Tomatenscheiben",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,50 €"
+            "klein": "9,00 €",
+            "groß": "11,00 €"
           },
           "badges": ["vegetarisch"]
         },
@@ -586,8 +586,8 @@
           "name": "Bahnhof-Pizza-Döner",
           "description": "mit Tomatensoße, Käse und Hähnchenststreifen",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "11,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         },
@@ -597,8 +597,8 @@
           "name": "Pizza Tonno",
           "description": "mit Tomatensoße, Zwiebeln, Thunfisch und Käse",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -608,8 +608,8 @@
           "name": "Frankenberg Pizza",
           "description": "mit Tomatensoße, Käse, Salami und Schinken",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -619,8 +619,8 @@
           "name": "Käsevielfalt Pizza",
           "description": "mit Tomatensoße und 4 verschiedenen Käsesorten",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": ["vegetarisch"]
         },
@@ -630,8 +630,8 @@
           "name": "Vegetaria Pizza",
           "description": "mit Tomatensoße, Käse, Pilzen, Mais, Zwiebel, Paprika, Brokkoli und Erbsen",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": ["vegetarisch"]
         },
@@ -641,8 +641,8 @@
           "name": "Spinat Pizza",
           "description": "mit Tomatensoße, Käse, Schinken, Ei und Spinat",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,50 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -652,8 +652,8 @@
           "name": "Peperoniwurst Pizza",
           "description": "mit Tomatensoße, Käse und Peperoniwurst",
           "prices": {
-            "klein": "6,50 €",
-            "groß": "8,50 €"
+            "klein": "7,50 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -663,8 +663,8 @@
           "name": "Vierjahreszeiten Pizza",
           "description": "mit Tomatensoße, Käse, Salami, Schinken, Pilzen und Paprika",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,50 €"
+            "klein": "9,00 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -674,8 +674,8 @@
           "name": "Calzone gefüllt",
           "description": "mit Tomatensoße, Käse, Salami, Schinken, Pilzen und Paprika",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         },
@@ -685,8 +685,8 @@
           "name": "Calzone Tonno-Hawaii",
           "description": "mit Tomatensoße, Käse, Thunfisch und Ananas",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         },
@@ -696,8 +696,8 @@
           "name": "Calzone Döner",
           "description": "mit Tomatensoße, Käse und Dönerfleisch",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         },
@@ -707,8 +707,8 @@
           "name": "Calzone Hähnchen Döner",
           "description": "mit Tomatensoße, Käse und Hähnchen-Dönerfleisch",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         },
@@ -718,8 +718,8 @@
           "name": "Quattro Formaggi Pizza",
           "description": "mit Tomatensoße und 4 Käsesorten",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "9,00 €",
+            "groß": "11,00 €"
           },
           "badges": ["vegetarisch"]
         },
@@ -729,8 +729,8 @@
           "name": "Pizza Diavolo",
           "description": "mit Tomatensoße, Käse, Salami und Peperoni",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": ["scharf"]
         },
@@ -740,8 +740,8 @@
           "name": "Toscana Pizza",
           "description": "mit Tomatensoße, Käse, Salami, Schinken, Peperoniwurst, Pilzen und Zwiebeln",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,50 €"
+            "klein": "8,50 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -751,8 +751,8 @@
           "name": "Pizza Capricciosa",
           "description": "mit Tomatensoße, Käse, Salami, Schinken, Peperoniwurst, Pilzen, Paprika und Artischocken",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "9,50 €"
+            "klein": "8,50 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -762,8 +762,8 @@
           "name": "Spezial Pizza",
           "description": "mit Tomatensoße, Käse, Thunfisch, Weichkäse, Peperoni und Zwiebeln",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         },
@@ -773,8 +773,8 @@
           "name": "Mafia Pizza",
           "description": "mit Tomatensoße, Käse, Salami, Peperoniwurst, Peperoni und Oliven",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "11,00 €"
           },
           "badges": ["scharf"]
         },
@@ -784,8 +784,8 @@
           "name": "Neu Pizza",
           "description": "mit Tomatensoße, Käse, Thunfisch, Pilzen, Paprika und Mozzarella",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "8,50 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -795,8 +795,8 @@
           "name": "Nizza Pizza",
           "description": "mit Tomatensoße, Käse, Thunfisch, Pilzen und Paprika",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -806,8 +806,8 @@
           "name": "Teufel Pizza",
           "description": "mit Tomatensoße, Käse, Salami, Schinken, Artischocken und Oliven",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "9,50 €"
+            "klein": "8,50 €",
+            "groß": "11,00 €"
           },
           "badges": ["scharf"]
         },
@@ -817,8 +817,8 @@
           "name": "Pizza mit Allem",
           "description": "mit Tomatensoße, Käse, Salami, Schinken, Peperoniwurst, Thunfisch, Paprika, Knoblauch und Peperoni",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "11,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         },
@@ -828,8 +828,8 @@
           "name": "Pizzabrot",
           "description": "mit Käse",
           "prices": {
-            "klein": "5,50 €",
-            "groß": "7,00 €"
+            "klein": "6,50 €",
+            "groß": "8,00 €"
           },
           "badges": []
         },
@@ -839,8 +839,8 @@
           "name": "Pizzabrot",
           "description": "mit Tomatensoße und Knoblauch",
           "prices": {
-            "klein": "5,50 €",
-            "groß": "7,00 €"
+            "klein": "6,50 €",
+            "groß": "8,00 €"
           },
           "badges": []
         },
@@ -850,8 +850,8 @@
           "name": "Pizza Romana",
           "description": "mit Käse und Tomaten",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -861,8 +861,8 @@
           "name": "Pizza Rustica",
           "description": "mit Käse und Fleisch",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -872,8 +872,8 @@
           "name": "Pizza Sucuk",
           "description": "mit Sucuk",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         }
@@ -891,8 +891,8 @@
           "name": "Tomatensalat",
           "description": "mit Essig-Öl, Basilikum",
           "prices": {
-            "klein": "6,00 €",
-            "groß": "9,00 €"
+            "klein": "7,00 €",
+            "groß": "10,00 €"
           },
           "badges": ["vegetarisch"]
         },
@@ -902,8 +902,8 @@
           "name": "Salat Italia",
           "description": "mit Weißkraut, Karotten, Schinken, Käse, Ei und Dressing",
           "prices": {
-            "klein": "6,00 €",
-            "groß": "9,00 €"
+            "klein": "7,00 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -913,8 +913,8 @@
           "name": "Salat Capri",
           "description": "mit Weißkraut, Karotten, Schinken, Käse, Ei, Thunfisch und Dressing",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "10,00 €"
+            "klein": "8,00 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -924,8 +924,8 @@
           "name": "Sommersalat",
           "description": "mit Hänchenstreifen und Dressing",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "10,00 €"
+            "klein": "8,00 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -935,8 +935,8 @@
           "name": "Bauernsalat",
           "description": "mit Weißkraut, Karotten, Weichkäse, Peperoni, Zwiebeln, Oliven und Dressing",
           "prices": {
-            "klein": "6,50 €",
-            "groß": "9,00 €"
+            "klein": "7,50 €",
+            "groß": "10,00 €"
           },
           "badges": []
         },
@@ -946,8 +946,8 @@
           "name": "Salat Bahnhof-Döner",
           "description": "mit Weißkraut, Karotten, Schinken, Weichkäse, Peperoni, Zwiebeln, Oliven und Dressing",
           "prices": {
-            "klein": "7,00 €",
-            "groß": "9,00 €"
+            "klein": "8,00 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -957,8 +957,8 @@
           "name": "Salat Frankenberg",
           "description": "mit Weißkraut, Karotten, Schinken, Käse, Paprika, Peperoni, Ei und Dressing",
           "prices": {
-            "klein": "6,50 €",
-            "groß": "9,00 €"
+            "klein": "7,50 €",
+            "groß": "11,00 €"
           },
           "badges": []
         },
@@ -968,8 +968,8 @@
           "name": "Gemischter Salat",
           "description": "mit Weißkraut, Karotten, Tomaten, Gurken und Dressing",
           "prices": {
-            "klein": "6,00 €",
-            "groß": "8,00 €"
+            "klein": "7,00 €",
+            "groß": "10,00 €"
           },
           "badges": ["vegetarisch"]
         }
@@ -987,8 +987,8 @@
           "name": "Pide Döner",
           "description": "mit Dönerfleisch",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         },
@@ -998,8 +998,8 @@
           "name": "Pide Käse",
           "description": "mit Käse",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": ["vegetarisch"]
         },
@@ -1009,8 +1009,8 @@
           "name": "Pide Sucuk",
           "description": "mit Sucuk",
           "prices": {
-            "klein": "7,50 €",
-            "groß": "10,00 €"
+            "klein": "9,00 €",
+            "groß": "12,00 €"
           },
           "badges": []
         }
@@ -1027,7 +1027,7 @@
           "nr": 80,
           "name": "Ayran",
           "description": "Joghurt Getränk, 0,25l",
-          "price": "1,50 €",
+          "price": "2,00 €",
           "badges": []
         },
         {
@@ -1035,7 +1035,7 @@
           "nr": 81,
           "name": "Coca Cola",
           "description": "0,33l",
-          "price": "1,80 €",
+          "price": "2,25 €",
           "badges": []
         },
         {
@@ -1043,7 +1043,7 @@
           "nr": 82,
           "name": "Sprite",
           "description": "0,33l",
-          "price": "1,80 €",
+          "price": "2,25 €",
           "badges": []
         },
         {
@@ -1051,7 +1051,7 @@
           "nr": 83,
           "name": "Fanta",
           "description": "0,33l",
-          "price": "1,80 €",
+          "price": "2,25 €",
           "badges": []
         },
         {
@@ -1059,7 +1059,7 @@
           "nr": 84,
           "name": "Uludag",
           "description": "Türkische Brause, 0,33l",
-          "price": "1,80 €",
+          "price": "2,25 €",
           "badges": []
         },
         {
@@ -1067,7 +1067,7 @@
           "nr": 85,
           "name": "Mineralwasser",
           "description": "0,50l",
-          "price": "1,80 €",
+          "price": "2,25 €",
           "badges": []
         },
         {
@@ -1075,7 +1075,7 @@
           "nr": 86,
           "name": "Malzbier",
           "description": "0,33l",
-          "price": "2,50 €",
+          "price": "3,00 €",
           "badges": []
         },
         {
@@ -1083,7 +1083,7 @@
           "nr": 87,
           "name": "Flaschenbier",
           "description": "0,33l",
-          "price": "2,50 €",
+          "price": "3,00 €",
           "badges": []
         },
         {
