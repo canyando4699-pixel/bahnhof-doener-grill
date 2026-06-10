@@ -4,42 +4,32 @@
 
 @layer base {
   :root {
-    /* 60/30/10 — Premium Dark */
     --color-bg:          #0a0a0a;
     --color-surface:     #141414;
     --color-surface-2:   #1c1c1c;
     --color-border:      #262626;
-
     --color-text:        #f5f5f5;
     --color-text-muted:  #a3a3a3;
     --color-text-dim:    #737373;
-
     --color-accent:      #dc2626;
     --color-accent-hover:#b91c1c;
-
-    /* Layout */
     --section-py:    5rem;
     --container-max: 72rem;
     --container-px:  1.5rem;
-
-    /* Typography */
     --font-display: 'Britney', cursive;
     --font-britney: 'Britney', cursive;
   }
-
   html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
   }
-
   body {
     font-family: var(--font-inter, system-ui, sans-serif);
     line-height: 1.7;
   }
-
-  /* Display headings using Britney get tighter rhythm */
   .font-display {
     font-family: var(--font-display);
     line-height: 1.1;
@@ -47,53 +37,80 @@
   }
 }
 
-/* ── Hero Entrance ─────────────────────────────────── */
 @keyframes hero-fade-in {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.hero-fade-in {
-  animation: hero-fade-in 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) both;
-}
+.hero-fade-in { animation: hero-fade-in 0.9s cubic-bezier(0.25, 0.1, 0.25, 1) both; }
 .hero-delay-1 { animation-delay: 0.5s; }
 .hero-delay-2 { animation-delay: 0.7s; }
 
-/* ── Scroll Indicator ──────────────────────────────── */
 @keyframes bounce-slow {
   0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(8px); }
+  50%      { transform: translateY(8px); }
 }
 .animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
 
-/* ── 3D Scene Float Effects ────────────────────────── */
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-16px); }
-}
-@keyframes float-delayed {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-12px); }
-}
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-20px); }
-}
+@keyframes float          { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+@keyframes float-delayed  { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes float-slow     { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
 .animate-float         { animation: float          6s ease-in-out infinite; }
 .animate-float-delayed { animation: float-delayed  8s ease-in-out 2s infinite; }
 .animate-float-slow    { animation: float-slow    10s ease-in-out 1s infinite; }
 
-/* ── Scroll Reveal ─────────────────────────────────── */
 @keyframes scroll-reveal-anim {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @supports (animation-timeline: view()) {
   .scroll-reveal {
     animation: scroll-reveal-anim 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) both;
     animation-timeline: view();
     animation-range: entry 5% entry 35%;
   }
+}
+
+/* ── Cinematic Headline Shimmer ────────────────────── */
+@keyframes title-shimmer {
+  0%   { background-position: -200% 50%; }
+  100% { background-position:  200% 50%; }
+}
+.title-shimmer {
+  background: linear-gradient(100deg, #f5f5f5 0%, #ffb84a 35%, #ff6a1a 50%, #ffb84a 65%, #f5f5f5 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  animation: title-shimmer 5.5s linear infinite;
+  text-shadow: 0 0 60px rgba(255,106,26,0.25);
+}
+
+/* ── Heat Pulse Halo ───────────────────────────────── */
+@keyframes heat-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,106,26,0.6), 0 0 40px 10px rgba(220,38,38,0.25); }
+  50%      { box-shadow: 0 0 0 14px rgba(255,106,26,0), 0 0 60px 18px rgba(255,106,26,0.45); }
+}
+.heat-pulse { animation: heat-pulse 2.6s ease-in-out infinite; }
+
+/* ── Spice Grain Overlay ───────────────────────────── */
+.spice-grain { position: relative; }
+.spice-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255,180,80,0.9) 1px, transparent 0);
+  background-size: 3px 3px;
+}
+
+/* ── 3D Perspective Root ───────────────────────────── */
+.perspective-root { perspective: 1200px; transform-style: preserve-3d; }
+
+/* ── Cinematic Section Veil ────────────────────────── */
+.veil-warm {
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,106,26,0.10) 0%, rgba(10,10,10,0) 60%);
 }
 
 /* ── Accessibility ─────────────────────────────────── */
@@ -103,7 +120,9 @@
   .animate-bounce-slow,
   .animate-float,
   .animate-float-delayed,
-  .animate-float-slow {
+  .animate-float-slow,
+  .title-shimmer,
+  .heat-pulse {
     animation: none;
   }
 }
