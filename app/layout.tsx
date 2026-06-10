@@ -16,6 +16,7 @@ const jsonLd = {
   hasMenu: 'https://bahnhof-doener.de/menu',
   acceptsReservations: false,
   paymentAccepted: 'Cash, EC-Karte',
+  founder: { '@type': 'Person', name: 'Mevlüt Yando' },
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '4.5',

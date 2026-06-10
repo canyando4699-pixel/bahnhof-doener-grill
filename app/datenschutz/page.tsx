@@ -14,7 +14,7 @@ export default function DatenschutzPage() {
           <div>
             <h2 className="text-lg font-semibold text-[var(--color-text)] mb-2">1. Verantwortlicher</h2>
             <p>Bahnhof Döner Grill</p>
-            <p>Inhaber: Ömer Yando</p>
+            <p>Inhaber: Mevlüt Yando</p>
             <p>Am Bahnhof 10</p>
             <p>35066 Frankenberg</p>
             <p>

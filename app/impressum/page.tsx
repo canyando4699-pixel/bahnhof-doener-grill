@@ -14,7 +14,7 @@ export default function ImpressumPage() {
           <div>
             <h2 className="text-lg font-semibold text-[var(--color-text)] mb-2">Angaben gemäß § 5 TMG</h2>
             <p>Bahnhof Döner Grill</p>
-            <p>Inhaber: Ömer Yando</p>
+            <p>Inhaber: Mevlüt Yando</p>
             <p>Am Bahnhof 10</p>
             <p>35066 Frankenberg</p>
             <p>Deutschland</p>
@@ -30,7 +30,7 @@ export default function ImpressumPage() {
             <h2 className="text-lg font-semibold text-[var(--color-text)] mb-2">
               Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
             </h2>
-            <p>Ömer Yando</p>
+            <p>Mevlüt Yando</p>
             <p>Am Bahnhof 10</p>
             <p>35066 Frankenberg</p>
           </div>

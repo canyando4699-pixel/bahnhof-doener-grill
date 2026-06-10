@@ -5,34 +5,46 @@ import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
 /**
- * Procedural Low-Poly Döner-Spieß
- * - Rotiert kontinuierlich (Spit-Rotation)
- * - Layered Mesh: dunkles Fleisch → warme Sear-Highlights
- * - Subtle Heat-Wobble via vertex displacement
+ * Realistischer Döner-Spieß:
+ * - Gestapelte Fleischschichten (typische Tropfenform: oben breit,
+ *   nach unten konisch zulaufend) mit Farb- und Radius-Variation
+ * - Angegrillte Außenkanten (emissive Sear an zufälligen Schichten)
+ * - Durchgehender Metallspieß, Teller oben + Auffangschale unten
  */
+
+const LAYERS = 26;
+const MEAT_TOP = 1.18;
+const MEAT_BOTTOM = -1.3;
+
+// Tropfenprofil: oben breit (Peak bei ~30%), nach unten konisch zulaufend
+function profile(u: number) {
+  return 0.26 + 0.58 * Math.sin(Math.PI * (0.28 + 0.72 * u));
+}
+
+const MEAT_COLORS = ['#6e3014', '#82421e', '#8f4a22', '#75361a', '#9b5326', '#7c3b18'];
+
 export default function DoenerSpit({ scale = 1 }: { scale?: number }) {
   const groupRef = useRef<THREE.Group>(null);
-  const meatRef = useRef<THREE.Mesh>(null);
+  const meatRef = useRef<THREE.Group>(null);
 
-  const meatGeometry = useMemo(() => {
-    const g = new THREE.CylinderGeometry(0.55, 0.8, 2.4, 24, 12, true);
-    const pos = g.attributes.position;
-    for (let i = 0; i < pos.count; i++) {
-      const x = pos.getX(i);
-      const y = pos.getY(i);
-      const z = pos.getZ(i);
-      const noise =
-        Math.sin(y * 8 + x * 4) * 0.04 +
-        Math.cos(z * 6 + y * 3) * 0.03 +
-        (Math.random() - 0.5) * 0.025;
-      const len = Math.sqrt(x * x + z * z);
-      if (len > 0) {
-        pos.setX(i, x + (x / len) * noise);
-        pos.setZ(i, z + (z / len) * noise);
-      }
-    }
-    g.computeVertexNormals();
-    return g;
+  const layers = useMemo(() => {
+    const h = (MEAT_TOP - MEAT_BOTTOM) / LAYERS;
+    return Array.from({ length: LAYERS }).map((_, i) => {
+      const u0 = i / LAYERS;
+      const u1 = (i + 1) / LAYERS;
+      // Stärkerer Jitter + gelegentlich ausgefranste Kante → handgeschichtet
+      const jitter = (Math.random() - 0.5) * 0.07 + (Math.random() < 0.18 ? 0.05 : 0);
+      const seared = Math.random() < 0.3;
+      return {
+        y: MEAT_TOP - (u0 + u1) / 2 * (MEAT_TOP - MEAT_BOTTOM),
+        rTop: Math.max(0.12, profile(u0) + jitter),
+        rBottom: Math.max(0.1, profile(u1) + (Math.random() - 0.5) * 0.06),
+        h: h * 1.06,
+        color: MEAT_COLORS[Math.floor(Math.random() * MEAT_COLORS.length)],
+        seared,
+        rot: Math.random() * Math.PI * 2,
+      };
+    });
   }, []);
 
   useFrame((state, delta) => {
@@ -40,85 +52,55 @@ export default function DoenerSpit({ scale = 1 }: { scale?: number }) {
       groupRef.current.rotation.y += delta * 0.45;
     }
     if (meatRef.current) {
-      const t = state.clock.elapsedTime;
-      meatRef.current.position.y = Math.sin(t * 1.5) * 0.015;
+      meatRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.5) * 0.015;
     }
   });
 
   return (
     <group ref={groupRef} scale={scale}>
-      {/* Spieß (Metall) */}
-      <mesh position={[0, 0, 0]}>
-        <cylinderGeometry args={[0.05, 0.05, 3.6, 12]} />
-        <meshStandardMaterial color="#c0c0c0" metalness={0.95} roughness={0.25} />
+      {/* Metallspieß (durchgehend) */}
+      <mesh>
+        <cylinderGeometry args={[0.045, 0.045, 3.9, 12]} />
+        <meshStandardMaterial color="#b8b8b8" metalness={0.95} roughness={0.28} />
       </mesh>
-
       {/* Spitze oben */}
-      <mesh position={[0, 1.85, 0]}>
-        <coneGeometry args={[0.05, 0.2, 12]} />
+      <mesh position={[0, 2.0, 0]}>
+        <coneGeometry args={[0.045, 0.18, 12]} />
         <meshStandardMaterial color="#a8a8a8" metalness={0.9} roughness={0.3} />
       </mesh>
 
-      {/* Halterung unten */}
-      <mesh position={[0, -1.85, 0]}>
-        <cylinderGeometry args={[0.18, 0.22, 0.15, 16]} />
-        <meshStandardMaterial color="#2a2a2a" metalness={0.6} roughness={0.6} />
+      {/* Teller über dem Fleisch */}
+      <mesh position={[0, MEAT_TOP + 0.09, 0]}>
+        <cylinderGeometry args={[0.5, 0.56, 0.07, 28]} />
+        <meshStandardMaterial color="#3a3a3a" metalness={0.8} roughness={0.4} />
       </mesh>
 
-      {/* Fleisch-Hauptmasse */}
-      <mesh ref={meatRef} geometry={meatGeometry} castShadow receiveShadow>
-        <meshStandardMaterial
-          color="#7a3216"
-          roughness={0.88}
-          metalness={0.05}
-          emissive="#2a0d05"
-          emissiveIntensity={0.18}
-        />
-      </mesh>
-
-      {/* Sear-Layer (knusprig) */}
-      <mesh geometry={meatGeometry} scale={1.012}>
-        <meshStandardMaterial
-          color="#b85c28"
-          roughness={0.6}
-          metalness={0.08}
-          emissive="#c44d12"
-          emissiveIntensity={0.22}
-          transparent
-          opacity={0.42}
-        />
-      </mesh>
-
-      {/* Top Cap (gerundet) */}
-      <mesh position={[0, 1.25, 0]}>
-        <sphereGeometry args={[0.55, 24, 16, 0, Math.PI * 2, 0, Math.PI / 2]} />
-        <meshStandardMaterial
-          color="#9a4520"
-          roughness={0.7}
-          emissive="#421a08"
-          emissiveIntensity={0.3}
-        />
-      </mesh>
-
-      {/* Drippings (kleine Tropfen) */}
-      {Array.from({ length: 6 }).map((_, i) => {
-        const angle = (i / 6) * Math.PI * 2;
-        const r = 0.78;
-        return (
-          <mesh
-            key={i}
-            position={[Math.cos(angle) * r, -1.2 - (i % 2) * 0.15, Math.sin(angle) * r]}
-          >
-            <sphereGeometry args={[0.045, 8, 8]} />
+      {/* Fleischschichten */}
+      <group ref={meatRef}>
+        {layers.map((l, i) => (
+          <mesh key={i} position={[0, l.y, 0]} rotation={[0, l.rot, 0]} castShadow receiveShadow>
+            <cylinderGeometry args={[l.rTop, l.rBottom, l.h, 26]} />
             <meshStandardMaterial
-              color="#d8541c"
-              emissive="#ff5a1a"
-              emissiveIntensity={0.6}
-              roughness={0.3}
+              color={l.color}
+              roughness={0.82}
+              metalness={0.04}
+              emissive={l.seared ? '#9c3d0a' : '#1d0a04'}
+              emissiveIntensity={l.seared ? 0.32 : 0.15}
             />
           </mesh>
-        );
-      })}
+        ))}
+      </group>
+
+      {/* Auffangschale unten */}
+      <mesh position={[0, MEAT_BOTTOM - 0.28, 0]}>
+        <cylinderGeometry args={[0.62, 0.52, 0.1, 28]} />
+        <meshStandardMaterial color="#2e2e2e" metalness={0.85} roughness={0.35} />
+      </mesh>
+      {/* Halterung unten */}
+      <mesh position={[0, MEAT_BOTTOM - 0.5, 0]}>
+        <cylinderGeometry args={[0.16, 0.2, 0.18, 16]} />
+        <meshStandardMaterial color="#222" metalness={0.6} roughness={0.6} />
+      </mesh>
     </group>
   );
 }

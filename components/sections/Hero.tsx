@@ -12,6 +12,25 @@ const Scene3D = dynamic(() => import('@/components/3d/Scene3D'), {
 
 const marqueeItems = ['Döner', 'Pizza', 'Lahmacun', 'Pide', 'Dürüm', 'Salate'];
 
+function Star({ fill }: { fill: 'full' | 'half' }) {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+      {fill === 'half' && (
+        <defs>
+          <linearGradient id="star-half">
+            <stop offset="50%" stopColor="#ffb01f" />
+            <stop offset="50%" stopColor="rgba(255,255,255,0.18)" />
+          </linearGradient>
+        </defs>
+      )}
+      <path
+        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+        fill={fill === 'full' ? '#ffb01f' : 'url(#star-half)'}
+      />
+    </svg>
+  );
+}
+
 export default function Hero() {
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -51,12 +70,9 @@ export default function Hero() {
         <div className="max-w-container mx-auto px-[var(--container-px)] w-full">
           <div ref={contentRef}>
             {/* Eyebrow-Zeile */}
-            <div className="flex items-center justify-between mb-6 hero-fade-in">
+            <div className="mb-6 hero-fade-in">
               <p className="text-[11px] md:text-xs tracking-[0.45em] uppercase text-[var(--color-text-muted)]">
                 Am Bahnhof 10 — Frankenberg
-              </p>
-              <p className="hidden md:flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-[var(--color-text-dim)]">
-                <span className="text-gold">★ 4.5</span> · 769 Google-Bewertungen
               </p>
             </div>
 
@@ -97,6 +113,21 @@ export default function Hero() {
                 >
                   Standort & Zeiten
                 </MagneticButton>
+              </div>
+
+              {/* Google-Bewertung — prominent */}
+              <div className="mt-9 flex items-center gap-3.5 hero-fade-in hero-delay-4">
+                <span className="flex items-center gap-0.5">
+                  <Star fill="full" />
+                  <Star fill="full" />
+                  <Star fill="full" />
+                  <Star fill="full" />
+                  <Star fill="half" />
+                </span>
+                <span className="font-display text-2xl text-gold leading-none pt-0.5">4.5</span>
+                <span className="text-sm text-[var(--color-text-muted)]">
+                  769 Google-Bewertungen
+                </span>
               </div>
             </div>
           </div>
