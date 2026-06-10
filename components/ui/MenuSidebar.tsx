@@ -11,7 +11,7 @@ interface Category {
 export default function MenuSidebar({ categories }: { categories: Category[] }) {
   const [active, setActive] = useState(categories[0]?.id ?? '');
   const isScrollingRef = useRef(false);
-  const scrollTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const scrollTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];

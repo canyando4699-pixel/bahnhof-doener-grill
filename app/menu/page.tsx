@@ -24,9 +24,12 @@ export default function MenuPage() {
 
           <main>
             {/* Page header — zentriert über den Karten */}
-            <div className="py-12">
-              <h1 className="font-display text-5xl md:text-6xl text-center text-[var(--color-text)] mb-5">
-                Unsere Speisekarte
+            <div className="py-14">
+              <p className="text-center text-xs tracking-[0.45em] uppercase text-accent mb-4">
+                Bahnhof Döner Grill
+              </p>
+              <h1 className="font-display text-6xl md:text-8xl text-center text-[var(--color-text)] mb-5 leading-[0.9]">
+                Speise<span className="ember-text">karte</span>
               </h1>
               <p className="text-center text-[var(--color-text-muted)] text-lg leading-relaxed">
                 Alle Gerichte werden frisch für Sie zubereitet

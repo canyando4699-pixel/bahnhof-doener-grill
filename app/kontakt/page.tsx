@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import Location from '@/components/sections/Location';
+import CTABanner from '@/components/sections/CTABanner';
 
 export const metadata: Metadata = {
   title: 'Kontakt — Bahnhof Döner Grill',
@@ -6,31 +8,15 @@ export const metadata: Metadata = {
 
 export default function KontaktPage() {
   return (
-    <main className="min-h-screen pt-20">
-      <div className="max-w-container mx-auto px-[var(--container-px)] py-16 max-w-2xl">
-        <h1 className="font-display text-5xl text-[var(--color-text)] mb-10">Kontakt</h1>
-
-        <div className="space-y-8 text-muted text-lg">
-          <div>
-            <p className="text-[var(--color-text)] font-semibold">Bahnhof Döner Grill</p>
-            <p>Am Bahnhof 10</p>
-            <p>35066 Frankenberg</p>
-          </div>
-
-          <div>
-            <p className="text-dim text-sm uppercase tracking-wide mb-1">Telefon</p>
-            <a href="tel:06451240925" className="hover:text-[var(--color-text)] transition-colors">
-              06451 240925
-            </a>
-          </div>
-
-          <div>
-            <p className="text-dim text-sm uppercase tracking-wide mb-1">Öffnungszeiten</p>
-            <p>Mo–Do & So: 10:00 – 23:00 Uhr</p>
-            <p>Fr & Sa: 10:00 – 24:00 Uhr</p>
-          </div>
-        </div>
+    <main className="min-h-screen pt-28">
+      <div className="max-w-container mx-auto px-[var(--container-px)] pt-14 pb-4">
+        <p className="text-xs tracking-[0.45em] uppercase text-accent mb-4">Bahnhof Döner Grill</p>
+        <h1 className="font-display text-6xl md:text-8xl text-[var(--color-text)] leading-[0.9]">
+          Kon<span className="ember-text">takt</span>
+        </h1>
       </div>
+      <Location />
+      <CTABanner />
     </main>
   );
 }

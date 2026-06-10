@@ -24,14 +24,15 @@ export default function FloatingIngredients() {
 
   const items = useMemo<Item[]>(() => {
     const types: Item['type'][] = ['pepper', 'onion', 'tomato', 'pita'];
-    return Array.from({ length: 14 }).map((_, i) => {
-      const angle = (i / 14) * Math.PI * 2 + Math.random() * 0.4;
-      const radius = 2.4 + Math.random() * 1.6;
-      const y = -0.8 + Math.random() * 2.6;
+    return Array.from({ length: 12 }).map((_, i) => {
+      const angle = (i / 12) * Math.PI * 2 + Math.random() * 0.4;
+      const radius = 2.6 + Math.random() * 1.3;
+      const y = -0.7 + Math.random() * 2.2;
       return {
         type: types[i % types.length],
-        pos: [Math.cos(angle) * radius, y, Math.sin(angle) * radius],
-        scale: 0.12 + Math.random() * 0.14,
+        // z abgeflacht → nichts fliegt der Kamera direkt vors Objektiv
+        pos: [Math.cos(angle) * radius, y, Math.sin(angle) * radius * 0.4],
+        scale: 0.06 + Math.random() * 0.07,
         speed: 0.3 + Math.random() * 0.5,
         axis: [Math.random(), Math.random(), Math.random()],
       };

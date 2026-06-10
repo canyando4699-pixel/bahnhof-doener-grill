@@ -15,10 +15,13 @@ module.exports = {
         dim:        'var(--color-text-dim)',
         accent:     'var(--color-accent)',
         'accent-hover':'var(--color-accent-hover)',
+        gold:       'var(--color-gold)',
+        ember:      'var(--color-red)',
+        cream:      'var(--color-text)',
       },
       fontFamily: {
-        display: ['Britney', 'cursive'],
-        body:    ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['Tanker', 'Arial Black', 'sans-serif'],
+        body:    ['General Sans', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         container: 'var(--container-max)',

@@ -1,8 +1,8 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
+import CustomCursor from '@/components/ui/CustomCursor';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -45,8 +45,6 @@ const jsonLd = {
   ],
 } as const;
 
-const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' });
-
 export const metadata: Metadata = {
   title: 'Bahnhof Döner Grill — Frisch vom Spieß | Frankenberg',
   description:
@@ -65,10 +63,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de">
+    <html lang="de" data-scroll-behavior="smooth">
       <head>
         <link
-          href="https://api.fontshare.com/v2/css?f[]=britney@1&display=swap"
+          href="https://api.fontshare.com/v2/css?f[]=tanker@400&f[]=general-sans@400,500,600,700&display=swap"
           rel="stylesheet"
         />
         <script
@@ -76,7 +74,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} font-body bg-bg text-[var(--color-text)]`}>
+      <body className="font-body bg-bg text-[var(--color-text)]">
+        <div className="grain-overlay" aria-hidden="true" />
+        <CustomCursor />
         <Navbar />
         {children}
         <Footer />

@@ -68,24 +68,24 @@ export default function DoenerSpit({ scale = 1 }: { scale?: number }) {
       {/* Fleisch-Hauptmasse */}
       <mesh ref={meatRef} geometry={meatGeometry} castShadow receiveShadow>
         <meshStandardMaterial
-          color="#8b3a1a"
-          roughness={0.85}
+          color="#7a3216"
+          roughness={0.88}
           metalness={0.05}
-          emissive="#3a1208"
-          emissiveIntensity={0.25}
+          emissive="#2a0d05"
+          emissiveIntensity={0.18}
         />
       </mesh>
 
       {/* Sear-Layer (knusprig) */}
       <mesh geometry={meatGeometry} scale={1.012}>
         <meshStandardMaterial
-          color="#e8783a"
-          roughness={0.55}
-          metalness={0.1}
-          emissive="#ff6a1a"
-          emissiveIntensity={0.45}
+          color="#b85c28"
+          roughness={0.6}
+          metalness={0.08}
+          emissive="#c44d12"
+          emissiveIntensity={0.22}
           transparent
-          opacity={0.55}
+          opacity={0.42}
         />
       </mesh>
 

@@ -1,3 +1,17 @@
+const isDev = process.env.NODE_ENV !== 'production';
+
+// Next.js Dev-Runtime (react-refresh) braucht eval → 'unsafe-eval' NUR in dev.
+// Ohne diese Ausnahme bootet React im Dev-Modus nicht (stille Hydration-Blockade).
+const csp = [
+  "default-src 'self'",
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
+  "worker-src 'self' blob:",
+  "style-src 'self' 'unsafe-inline' https://api.fontshare.com",
+  "img-src 'self' data:",
+  "font-src 'self' data: https://cdn.fontshare.com",
+  `connect-src 'self'${isDev ? ' ws: wss:' : ''}`,
+].join('; ');
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -43,21 +57,26 @@ const nextConfig = {
             // Next.js App Router emits dynamic inline bootstrap scripts that cannot be
             // statically hashed. 'unsafe-inline' is required here. For stricter CSP,
             // implement nonce-based headers via Next.js middleware instead.
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline'; worker-src 'self'; style-src 'self' 'unsafe-inline' https://api.fontshare.com; img-src 'self' data:; font-src 'self' data: https://cdn.fontshare.com; connect-src 'self';",
+            value: csp,
           },
         ],
       },
 
-      // Fingerprinted JS/CSS chunks — safe to cache forever
-      {
-        source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
+      // Fingerprinted JS/CSS chunks — safe to cache forever (NICHT im Dev:
+      // dort sind Chunks nicht fingerprinted → immutable cached alte Builds)
+      ...(isDev
+        ? []
+        : [
+            {
+              source: '/_next/static/:path*',
+              headers: [
+                {
+                  key: 'Cache-Control',
+                  value: 'public, max-age=31536000, immutable',
+                },
+              ],
+            },
+          ]),
 
       // Public images — not fingerprinted, 7d cache + background revalidation
       {

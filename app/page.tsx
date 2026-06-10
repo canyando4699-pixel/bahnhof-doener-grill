@@ -1,17 +1,27 @@
 import Hero from '@/components/sections/Hero';
-import InfoStrip from '@/components/sections/InfoStrip';
-import PizzaSection from '@/components/sections/PizzaSection';
+import Signature from '@/components/sections/Signature';
+import Story from '@/components/sections/Story';
+import Categories from '@/components/sections/Categories';
+import Location from '@/components/sections/Location';
+import CTABanner from '@/components/sections/CTABanner';
+import Preloader from '@/components/ui/Preloader';
 import ScrollReveal from '@/components/animations/ScrollReveal';
 
 export default function Home() {
   return (
     <main>
+      <Preloader />
       <Hero />
       <ScrollReveal>
-        <InfoStrip />
+        <Signature />
       </ScrollReveal>
+      <Story />
       <ScrollReveal>
-        <PizzaSection />
+        <Categories />
+      </ScrollReveal>
+      <Location />
+      <ScrollReveal>
+        <CTABanner />
       </ScrollReveal>
     </main>
   );

@@ -1,7 +1,7 @@
 'use client';
 
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { Environment, ContactShadows, Float } from '@react-three/drei';
+import { Environment, ContactShadows, Float, Lightformer } from '@react-three/drei';
 import { EffectComposer, Bloom, Vignette, ChromaticAberration } from '@react-three/postprocessing';
 import { BlendFunction } from 'postprocessing';
 import { Suspense, useRef } from 'react';
@@ -9,6 +9,7 @@ import * as THREE from 'three';
 import DoenerSpit from './DoenerSpit';
 import SteamParticles from './SteamParticles';
 import FloatingIngredients from './FloatingIngredients';
+import Embers from './Embers';
 
 function MouseParallaxRig() {
   const { camera, pointer } = useThree();
@@ -44,11 +45,11 @@ function HeatLight() {
   );
 }
 
-export default function SceneR3F() {
+export default function Scene3D() {
   return (
     <div className="absolute inset-0" aria-hidden="true">
       <Canvas
-        camera={{ position: [0, 0.6, 5.2], fov: 42 }}
+        camera={{ position: [0, 0.5, 6.6], fov: 38 }}
         dpr={[1, 2]}
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         style={{ background: 'transparent' }}
@@ -62,11 +63,14 @@ export default function SceneR3F() {
           <pointLight position={[-2.5, 1, -1]} color="#dc2626" intensity={1.1} distance={6} />
 
           <Float floatIntensity={0.4} rotationIntensity={0.15} speed={1.2}>
-            <DoenerSpit scale={1.05} />
+            <group position={[0.7, -0.15, 0]}>
+              <DoenerSpit scale={0.8} />
+            </group>
           </Float>
 
           <SteamParticles count={70} origin={[0, 1.3, 0]} />
           <FloatingIngredients />
+          <Embers count={90} />
 
           <ContactShadows
             position={[0, -1.95, 0]}
@@ -77,14 +81,19 @@ export default function SceneR3F() {
             color="#000000"
           />
 
-          <Environment preset="night" />
+          {/* Lokales Environment (keine CDN-Fetches → CSP-sicher) */}
+          <Environment resolution={64}>
+            <Lightformer intensity={1.6} color="#ffd9a8" position={[2, 3, 2]} scale={[3, 3, 1]} />
+            <Lightformer intensity={0.9} color="#ff5a1f" position={[-3, 0.5, 1]} scale={[2, 4, 1]} />
+            <Lightformer intensity={0.5} color="#3a4a6a" position={[0, 1, -4]} scale={[6, 3, 1]} />
+          </Environment>
 
           <MouseParallaxRig />
 
           <EffectComposer multisampling={0}>
             <Bloom
-              intensity={1.1}
-              luminanceThreshold={0.25}
+              intensity={0.7}
+              luminanceThreshold={0.45}
               luminanceSmoothing={0.85}
               mipmapBlur
             />
