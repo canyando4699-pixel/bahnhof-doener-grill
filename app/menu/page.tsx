@@ -36,11 +36,12 @@ export default function MenuPage() {
               </p>
             </div>
 
-            {menuData.categories.map((category) => (
+            {menuData.categories.map((category, i) => (
               <MenuSection
                 key={category.id}
                 id={category.id}
                 title={category.name}
+                level={i + 1}
                 items={(category.items as MenuItem[]).map((item) => {
                   const image = getMenuImage(item.name, category.id);
                   const isZoomedOut =

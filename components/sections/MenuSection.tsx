@@ -13,12 +13,20 @@ interface MenuSectionProps {
   id: string;
   title: string;
   items: MenuItem[];
+  level?: number;
 }
 
-export default function MenuSection({ id, title, items }: MenuSectionProps) {
+export default function MenuSection({ id, title, items, level }: MenuSectionProps) {
   return (
     <section id={id} className="py-12 scroll-mt-32 lg:scroll-mt-24">
       <div className="max-w-container mx-auto px-[var(--container-px)]">
+        {level !== undefined && (
+          <p className="text-center mb-3">
+            <span className="inline-block text-[10px] tracking-[0.35em] uppercase text-accent border border-accent/40 rounded-full px-4 py-1.5">
+              Level {String(level).padStart(2, '0')}
+            </span>
+          </p>
+        )}
         <h2 className="font-display text-3xl md:text-4xl text-[var(--color-text)] mb-8 text-center">
           {title}
         </h2>

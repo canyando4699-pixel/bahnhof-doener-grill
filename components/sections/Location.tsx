@@ -21,13 +21,13 @@ export default function Location() {
         className="absolute -top-8 right-0 font-display text-[clamp(10rem,28vw,24rem)] leading-none text-outline-dim select-none pointer-events-none"
         aria-hidden="true"
       >
-        03
+        04
       </span>
 
       <div className="max-w-container mx-auto px-[var(--container-px)] relative">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-24">
           <div>
-            <p className="text-xs tracking-[0.45em] uppercase text-accent mb-4">Nicht zu verfehlen</p>
+            <p className="text-xs tracking-[0.45em] uppercase text-accent mb-4">🗺️ Side-Quest: Zu uns finden</p>
             <h2 className="font-display text-5xl md:text-7xl text-[var(--color-text)] leading-[0.9]">
               Gleis da.
               <br />

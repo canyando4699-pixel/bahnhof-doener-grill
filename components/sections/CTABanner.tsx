@@ -20,6 +20,11 @@ export default function CTABanner() {
       </div>
 
       <div className="relative max-w-container mx-auto px-[var(--container-px)] text-center">
+        <p className="mb-7">
+          <span className="inline-block border border-accent/40 text-accent rounded-full px-5 py-2 text-[10px] tracking-[0.35em] uppercase">
+            ⚔️ Final Level — Dein Hunger
+          </span>
+        </p>
         <h2 className="font-display text-[clamp(4rem,14vw,11rem)] leading-[0.85] uppercase">
           <span className="block text-outline">Hunger</span>
           <span className="block ember-text">bekommen?</span>

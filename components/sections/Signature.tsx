@@ -23,6 +23,14 @@ const picks = [
   findItem('pizza'),
 ].filter(Boolean) as NonNullable<ReturnType<typeof findItem>>[];
 
+/* Game-Rarities pro Klassiker */
+const rarities = [
+  { label: 'Legendär', color: '#ffb01f' },
+  { label: 'Episch', color: '#b66bff' },
+  { label: 'Selten', color: '#5ab1ff' },
+  { label: 'Beliebt', color: '#ff5a1f' },
+];
+
 export default function Signature() {
   return (
     <section className="relative py-[var(--section-py)] overflow-hidden">
@@ -54,8 +62,20 @@ export default function Signature() {
                     <span className="font-display text-5xl md:text-6xl text-outline-dim group-hover:text-outline transition-all duration-300">
                       {String(i + 1).padStart(2, '0')}
                     </span>
-                    <span className="text-[10px] tracking-[0.3em] uppercase text-[var(--color-text-dim)] border border-border rounded-full px-3.5 py-1.5 mt-2">
-                      {categoryName}
+                    <span className="flex flex-wrap justify-end gap-2 mt-2">
+                      <span
+                        className="text-[10px] tracking-[0.3em] uppercase border rounded-full px-3.5 py-1.5 font-semibold"
+                        style={{
+                          color: rarities[i].color,
+                          borderColor: `${rarities[i].color}66`,
+                          boxShadow: `0 0 20px -5px ${rarities[i].color}aa`,
+                        }}
+                      >
+                        ◆ {rarities[i].label}
+                      </span>
+                      <span className="text-[10px] tracking-[0.3em] uppercase text-[var(--color-text-dim)] border border-border rounded-full px-3.5 py-1.5">
+                        {categoryName}
+                      </span>
                     </span>
                   </div>
 

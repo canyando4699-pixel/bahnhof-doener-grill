@@ -4,10 +4,10 @@ import menuData from '@/data/menu.json';
 const dishCount = menuData.categories.reduce((sum, c) => sum + c.items.length, 0);
 
 const stats = [
-  { value: 4.5, decimals: 1, suffix: '★', label: 'Google-Bewertung' },
-  { value: 769, decimals: 0, suffix: '+', label: 'Bewertungen' },
-  { value: dishCount, decimals: 0, suffix: '', label: 'Gerichte auf der Karte' },
-  { value: 7, decimals: 0, suffix: '', label: 'Tage die Woche frisch' },
+  { value: 4.5, decimals: 1, suffix: '★', label: 'Google-Bewertung', icon: '⭐' },
+  { value: 769, decimals: 0, suffix: '+', label: 'Bewertungen', icon: '💬' },
+  { value: dishCount, decimals: 0, suffix: '', label: 'Gerichte auf der Karte', icon: '🍽️' },
+  { value: 7, decimals: 0, suffix: '', label: 'Tage die Woche frisch', icon: '🔥' },
 ];
 
 export default function Story() {
@@ -40,14 +40,24 @@ export default function Story() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-x-8 gap-y-14">
+          {/* Erfolge im Game-Stil */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {stats.map((stat) => (
-              <div key={stat.label} className="scroll-reveal">
-                <p className="font-display text-6xl md:text-7xl text-[var(--color-text)] leading-none">
-                  <Counter to={stat.value} decimals={stat.decimals} />
-                  <span className="ember-text">{stat.suffix}</span>
+              <div
+                key={stat.label}
+                className="scroll-reveal group relative border border-border rounded-2xl p-6 md:p-7 bg-[var(--color-bg)]/50 hover:border-gold/50 hover:-translate-y-1 transition-all duration-300"
+              >
+                <p className="text-[9px] tracking-[0.3em] uppercase text-gold/80 mb-4 flex items-center gap-1.5">
+                  <span aria-hidden="true">🏆</span> Freigeschaltet
                 </p>
-                <div className="h-[2px] w-12 bg-accent mt-5 mb-3" aria-hidden="true" />
+                <p className="font-display text-5xl md:text-6xl text-[var(--color-text)] leading-none flex items-end gap-2.5">
+                  <span className="text-3xl mb-0.5" aria-hidden="true">{stat.icon}</span>
+                  <span>
+                    <Counter to={stat.value} decimals={stat.decimals} />
+                    <span className="ember-text">{stat.suffix}</span>
+                  </span>
+                </p>
+                <div className="h-[2px] w-12 bg-accent mt-5 mb-3 group-hover:w-20 transition-all duration-300" aria-hidden="true" />
                 <p className="text-xs tracking-[0.25em] uppercase text-[var(--color-text-dim)]">{stat.label}</p>
               </div>
             ))}

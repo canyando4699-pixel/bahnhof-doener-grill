@@ -78,11 +78,11 @@ export default function MenuSidebar({ categories }: { categories: Category[] }) 
       >
         <div className="bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-4 overflow-hidden">
           <p className="text-[10px] font-bold tracking-[0.18em] text-[var(--color-text-dim)] uppercase px-3 mb-3">
-            Kategorien
+            🎮 Level wählen
           </p>
 
           <nav className="space-y-0.5">
-            {categories.map(({ id, name, count }) => (
+            {categories.map(({ id, name, count }, i) => (
               <a
                 key={id}
                 href={`#${id}`}
@@ -93,7 +93,16 @@ export default function MenuSidebar({ categories }: { categories: Category[] }) 
                     : 'text-[var(--color-text-muted)] hover:bg-[var(--color-surface-2)] hover:text-[var(--color-text)]'
                 }`}
               >
-                <span>{name}</span>
+                <span>
+                  <span
+                    className={`text-[10px] tabular-nums mr-2 ${
+                      active === id ? 'text-white/60' : 'text-[var(--color-text-dim)]'
+                    }`}
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  {name}
+                </span>
                 <span
                   className={`text-xs tabular-nums transition-colors ${
                     active === id
