@@ -1,7 +1,7 @@
 import Hero from '@/components/sections/Hero';
 import Signature from '@/components/sections/Signature';
 import Story from '@/components/sections/Story';
-import DoenerBuilder from '@/components/sections/DoenerBuilder';
+import FlappyDoener from '@/components/sections/FlappyDoener';
 import Categories from '@/components/sections/Categories';
 import Location from '@/components/sections/Location';
 import CTABanner from '@/components/sections/CTABanner';
@@ -17,7 +17,7 @@ export default function Home() {
         <Signature />
       </ScrollReveal>
       <Story />
-      <DoenerBuilder />
+      <FlappyDoener />
       <ScrollReveal>
         <Categories />
       </ScrollReveal>
