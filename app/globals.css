@@ -158,8 +158,10 @@
   /* Farbe = Titel-Verlauf an der Ö-Stelle → wirkt wie Teil des Buchstabens */
   background: #ffd166;
 }
-.o-dots::before { left: 0.185em; }
-.o-dots::after { left: 0.435em; }
+/* Im Browser gemessen: O beginnt exakt am Anker, O-Mitte = 0.229em.
+   Punkte (0.14em) + Gap (0.11em) symmetrisch darum verteilt. */
+.o-dots::before { left: 0.034em; }
+.o-dots::after { left: 0.284em; }
 
 /* Scroll-getriebene Reveals (CSS-only, kein JS nötig) */
 @keyframes scroll-reveal-anim {
