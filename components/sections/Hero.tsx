@@ -78,12 +78,13 @@ export default function Hero() {
 
             {/* Riesen-Typo, Layer-Sandwich mit dem 3D-Spieß */}
             <h1 className="font-display uppercase select-none">
-              <span className="title-rise-wrap block relative z-[5]">
+              {/* pt/-mt: Luft für Umlaut-Punkte (Ö), die sonst vom overflow-hidden geclippt werden */}
+              <span className="title-rise-wrap block relative z-[5] pt-[0.2em] -mt-[0.2em]">
                 <span className="title-rise text-outline text-[clamp(4.2rem,16vw,13.5rem)] leading-[0.85] block">
                   Bahnhof
                 </span>
               </span>
-              <span className="title-rise-wrap block relative z-[20]">
+              <span className="title-rise-wrap block relative z-[20] pt-[0.2em] -mt-[0.2em]">
                 <span
                   className="title-rise ember-text text-[clamp(4.2rem,16vw,13.5rem)] leading-[0.85] block"
                   style={{ animationDelay: '0.12s' }}
