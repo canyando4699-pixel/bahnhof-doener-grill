@@ -2,8 +2,7 @@
 
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Environment, ContactShadows, Float, Lightformer } from '@react-three/drei';
-import { EffectComposer, Bloom, Vignette, ChromaticAberration } from '@react-three/postprocessing';
-import { BlendFunction } from 'postprocessing';
+import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
 import { Suspense, useRef } from 'react';
 import * as THREE from 'three';
 import DoenerSpit from './DoenerSpit';
@@ -50,7 +49,7 @@ export default function Scene3D() {
     <div className="absolute inset-0" aria-hidden="true">
       <Canvas
         camera={{ position: [0, 0.5, 6.6], fov: 38 }}
-        dpr={[1, 2]}
+        dpr={[1, 1.5]}
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
         style={{ background: 'transparent' }}
       >
@@ -90,18 +89,14 @@ export default function Scene3D() {
 
           <MouseParallaxRig />
 
+          {/* ChromaticAberration entfernt: kaum sichtbar, aber teurer
+              Fullscreen-Pass → weniger GPU-Last (Lüfter/Spulenfiepen) */}
           <EffectComposer multisampling={0}>
             <Bloom
               intensity={0.7}
               luminanceThreshold={0.45}
               luminanceSmoothing={0.85}
               mipmapBlur
-            />
-            <ChromaticAberration
-              offset={new THREE.Vector2(0.0006, 0.0009)}
-              blendFunction={BlendFunction.NORMAL}
-              radialModulation={false}
-              modulationOffset={0}
             />
             <Vignette eskil={false} offset={0.2} darkness={0.85} />
           </EffectComposer>

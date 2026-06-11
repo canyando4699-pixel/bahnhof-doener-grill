@@ -151,14 +151,15 @@
 .o-dots::after {
   content: '';
   position: absolute;
-  top: -0.09em;
-  width: 0.13em;
-  height: 0.13em;
+  top: -0.04em;
+  width: 0.14em;
+  height: 0.14em;
   border-radius: 50%;
-  background: linear-gradient(160deg, #ffd9a8, var(--color-gold));
+  /* Farbe = Titel-Verlauf an der Ö-Stelle → wirkt wie Teil des Buchstabens */
+  background: #ffd166;
 }
-.o-dots::before { left: 0.21em; }
-.o-dots::after { left: 0.47em; }
+.o-dots::before { left: 0.185em; }
+.o-dots::after { left: 0.435em; }
 
 /* Scroll-getriebene Reveals (CSS-only, kein JS nötig) */
 @keyframes scroll-reveal-anim {
