@@ -131,8 +131,34 @@
   from { opacity: 0; transform: translateY(110%) rotate(2deg); }
   to   { opacity: 1; transform: translateY(0) rotate(0); }
 }
-.title-rise-wrap { overflow: hidden; }
+/* Maske nur unten/seitlich — oben 0.5em offen, damit Umlaut-Punkte (Ö)
+   und Overshoot-Glyphen nie abgeschnitten werden */
+.title-rise-wrap { clip-path: inset(-0.5em 0 0 0); }
 .title-rise { display: block; animation: title-rise 1.1s var(--ease-out-expo) both; }
+
+/* Tanker quetscht Umlaut-Punkte winzig an die Versalie → eigene Punkte.
+   Trick: 0-breiter Anker VOR dem O trägt die Punkte. Das O selbst darf
+   NICHT positioniert/inline-block sein, sonst fällt es aus dem
+   background-clip:text des Eltern-Gradients (wird unsichtbar). */
+.o-dots {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: top;
+}
+.o-dots::before,
+.o-dots::after {
+  content: '';
+  position: absolute;
+  top: -0.09em;
+  width: 0.13em;
+  height: 0.13em;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #ffd9a8, var(--color-gold));
+}
+.o-dots::before { left: 0.21em; }
+.o-dots::after { left: 0.47em; }
 
 /* Scroll-getriebene Reveals (CSS-only, kein JS nötig) */
 @keyframes scroll-reveal-anim {

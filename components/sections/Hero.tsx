@@ -89,8 +89,12 @@ export default function Hero() {
                 <span
                   className="title-rise ember-text leading-[0.85] block"
                   style={{ animationDelay: '0.12s' }}
+                  aria-label="Döner"
                 >
-                  Döner
+                  {/* O statt Ö + CSS-Punkte: Font-eigene Umlaut-Punkte sind zu klein */}
+                  <span aria-hidden="true">
+                    D<span className="o-dots" />ONER
+                  </span>
                 </span>
               </span>
             </h1>
