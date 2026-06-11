@@ -76,6 +76,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="font-body bg-bg text-[var(--color-text)]">
+        <div className="ember-glow" aria-hidden="true" />
         <CustomCursor />
         <Navbar />
         {children}
