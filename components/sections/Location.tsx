@@ -75,7 +75,7 @@ export default function Location() {
                 </div>
               ))}
             </dl>
-            <p className="mt-6 text-xs text-[var(--color-text-dim)]">Barzahlung & EC-Karte — frisch vor Ort zubereitet.</p>
+            <p className="mt-6 text-xs text-[var(--color-text-dim)]">Barzahlung, bald auch mit EC-Karte — frisch vor Ort zubereitet.</p>
           </div>
         </div>
       </div>

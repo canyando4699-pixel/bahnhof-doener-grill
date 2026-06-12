@@ -15,7 +15,7 @@ const jsonLd = {
   servesCuisine: ['Türkisch', 'Döner', 'Pizza'],
   hasMenu: 'https://bahnhof-doener.de/menu',
   acceptsReservations: false,
-  paymentAccepted: 'Cash, EC-Karte',
+  paymentAccepted: 'Cash',
   founder: { '@type': 'Person', name: 'Mevlüt Yando' },
   aggregateRating: {
     '@type': 'AggregateRating',
