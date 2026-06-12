@@ -42,8 +42,15 @@ export default function Hero() {
       raf = requestAnimationFrame(() => {
         const y = window.scrollY;
         if (contentRef.current) {
-          contentRef.current.style.opacity = String(Math.max(0, 1 - y / 480));
-          contentRef.current.style.transform = `translateY(${y * 0.22}px)`;
+          if (y <= 0) {
+            // Styles ganz entfernen: ein transform (auch translateY(0)) erzeugt
+            // einen Stacking-Context und schiebt den Inhalt unter das Canvas
+            contentRef.current.style.removeProperty('opacity');
+            contentRef.current.style.removeProperty('transform');
+          } else {
+            contentRef.current.style.opacity = String(Math.max(0, 1 - y / 480));
+            contentRef.current.style.transform = `translateY(${y * 0.22}px)`;
+          }
         }
       });
     };
@@ -69,7 +76,9 @@ export default function Hero() {
         <Scene3D />
       </div>
 
-      <div className="relative flex-1 flex flex-col justify-center pt-32 pb-10">
+      {/* Mobil liegt der ganze Inhalt über dem Canvas (z-15) — das
+          Tiefen-Sandwich (Spieß zwischen den Titelzeilen) gibt es nur ab md */}
+      <div className="relative z-[15] md:z-auto flex-1 flex flex-col justify-center pt-32 pb-10">
         <div className="max-w-container mx-auto px-[var(--container-px)] w-full">
           <div ref={contentRef}>
             {/* Eyebrow-Zeile */}

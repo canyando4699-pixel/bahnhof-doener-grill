@@ -30,7 +30,7 @@ export default function Footer() {
             <p className="text-[10px] tracking-[0.35em] uppercase text-[var(--color-text-dim)] mb-4">Öffnungszeiten</p>
             <p className="text-[var(--color-text-muted)] text-sm leading-relaxed">
               Mo – Do & So: 10 – 23 Uhr<br />
-              Fr & Sa: 10 – 24 Uhr
+              Fr & Sa: 10 – 00:00 Uhr
             </p>
           </div>
 

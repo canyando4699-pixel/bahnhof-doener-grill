@@ -45,7 +45,7 @@ export default function OpenBadge({ className = '' }: { className?: string }) {
       {status.open
         ? status.minsLeft <= 60
           ? `Jetzt geöffnet · schließt in ${status.minsLeft} Min`
-          : `Jetzt geöffnet · bis ${status.closeHour === 24 ? '24' : status.closeHour} Uhr`
+          : `Jetzt geöffnet · bis ${status.closeHour === 24 ? '00:00' : status.closeHour} Uhr`
         : `Geschlossen · öffnet ${status.opensToday ? 'heute' : 'morgen'} 10 Uhr`}
     </span>
   );

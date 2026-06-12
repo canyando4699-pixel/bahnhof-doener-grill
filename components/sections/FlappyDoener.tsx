@@ -32,10 +32,14 @@ type Pipe = {
   gapY: number;
   gapH: number;
   passed: boolean;
-  bonus: { emoji: string; taken: boolean } | null;
+  bonus: { kind: number; taken: boolean } | null;
 };
 
-const BONUS_EMOJIS = ['🍅', '🥬', '🧅', '🌶️'];
+/* Emoji-Optik als lokale Twemoji-PNGs (CC-BY 4.0, jdecked/twemoji):
+   fillText-Emojis rendern auf iOS-Canvas nur als braune Silhouette,
+   drawImage funktioniert überall identisch */
+const BONUS_KINDS = ['tomate', 'salat', 'zwiebel', 'chili'] as const;
+const GAME_IMAGES = ['doener', ...BONUS_KINDS] as const;
 const PIPE_W = 58;
 const PIPE_SPACING = 270;
 const GROUND_H = 26;
@@ -84,6 +88,14 @@ export default function FlappyDoener() {
     let raf = 0;
     let last = performance.now();
 
+    const images: Record<string, HTMLImageElement> = {};
+    for (const name of GAME_IMAGES) {
+      const img = new Image();
+      img.src = `/images/game/${name}.png`;
+      images[name] = img;
+    }
+    const imgReady = (img: HTMLImageElement) => img.complete && img.naturalWidth > 0;
+
     const g = {
       y: 0,
       vy: 0,
@@ -119,7 +131,7 @@ export default function FlappyDoener() {
       const margin = 60;
       const gapY = margin + Math.random() * Math.max(40, H - GROUND_H - margin * 2 - gapH);
       const bonus = Math.random() < 0.35
-        ? { emoji: BONUS_EMOJIS[Math.floor(Math.random() * BONUS_EMOJIS.length)], taken: false }
+        ? { kind: Math.floor(Math.random() * BONUS_KINDS.length), taken: false }
         : null;
       g.pipes.push({ x, gapY, gapH, passed: false, bonus });
     };
@@ -240,9 +252,22 @@ export default function FlappyDoener() {
         }
 
         if (p.bonus && !p.bonus.taken) {
-          ctx.font = '24px serif';
-          ctx.textAlign = 'center';
-          ctx.fillText(p.bonus.emoji, p.x + PIPE_W / 2, p.gapY + p.gapH / 2 + 8);
+          const img = images[BONUS_KINDS[p.bonus.kind]];
+          const bx = p.x + PIPE_W / 2;
+          const by = p.gapY + p.gapH / 2;
+          // Goldener Glow dahinter
+          ctx.fillStyle = 'rgba(255, 176, 31, 0.2)';
+          ctx.beginPath();
+          ctx.arc(bx, by, 14, 0, Math.PI * 2);
+          ctx.fill();
+          if (imgReady(img)) {
+            ctx.drawImage(img, bx - 11, by - 11, 22, 22);
+          } else {
+            ctx.fillStyle = '#ffb01f';
+            ctx.beginPath();
+            ctx.arc(bx, by, 8, 0, Math.PI * 2);
+            ctx.fill();
+          }
         }
       }
     };
@@ -284,12 +309,19 @@ export default function FlappyDoener() {
       const rot = phaseRef.current === 'running'
         ? Math.max(-0.5, Math.min(0.9, g.vy / 620))
         : Math.sin(t / 480) * 0.08;
+      // Döner-Emoji als lokales PNG (iOS-fest), rotiert mit der Flugbahn
       ctx.save();
       ctx.translate(px, py);
       ctx.rotate(rot);
-      ctx.font = '34px serif';
-      ctx.textAlign = 'center';
-      ctx.fillText('🥙', 0, 12);
+      const playerImg = images.doener;
+      if (imgReady(playerImg)) {
+        ctx.drawImage(playerImg, -19, -19, 38, 38);
+      } else {
+        ctx.fillStyle = '#e2a85c';
+        ctx.beginPath();
+        ctx.arc(0, 0, PLAYER_R, 0, Math.PI * 2);
+        ctx.fill();
+      }
       ctx.restore();
     };
 

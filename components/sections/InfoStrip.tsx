@@ -22,7 +22,7 @@ export default function InfoStrip() {
               Öffnungszeiten
             </h2>
             <p className="text-muted text-sm leading-relaxed">Mo–Do & So: 10:00 – 23:00 Uhr</p>
-            <p className="text-muted text-sm leading-relaxed">Fr & Sa: 10:00 – 24:00 Uhr</p>
+            <p className="text-muted text-sm leading-relaxed">Fr & Sa: 10:00 – 00:00 Uhr</p>
           </div>
 
           {/* Adresse */}

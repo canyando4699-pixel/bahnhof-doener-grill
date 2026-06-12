@@ -5,8 +5,8 @@ const mapsUrl =
 
 const hours = [
   { days: 'Mo – Do', time: '10 – 23 Uhr' },
-  { days: 'Freitag', time: '10 – 24 Uhr' },
-  { days: 'Samstag', time: '10 – 24 Uhr' },
+  { days: 'Freitag', time: '10 – 00:00 Uhr' },
+  { days: 'Samstag', time: '10 – 00:00 Uhr' },
   { days: 'Sonntag', time: '10 – 23 Uhr' },
 ];
 
