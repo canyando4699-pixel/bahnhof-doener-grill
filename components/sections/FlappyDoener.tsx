@@ -314,7 +314,7 @@ export default function FlappyDoener() {
   const isRecord = inTop && score >= board[0];
 
   return (
-    <section className="relative py-[var(--section-py)] overflow-hidden">
+    <section id="game" className="relative py-[var(--section-py)] overflow-hidden">
       <span
         className="absolute -top-10 left-0 font-display text-[clamp(10rem,28vw,24rem)] leading-none text-outline-dim select-none pointer-events-none"
         aria-hidden="true"

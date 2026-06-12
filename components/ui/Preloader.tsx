@@ -34,6 +34,9 @@ export default function Preloader() {
       <div className="text-center">
         <p className="font-display text-5xl md:text-7xl text-outline leading-none">Bahnhof</p>
         <p className="font-display text-5xl md:text-7xl ember-text leading-none">Döner</p>
+        <p className="mt-6 text-xs tracking-[0.25em] uppercase text-[var(--color-text-dim)] animate-pulse">
+          🎮 Mit Minigame — Flappy Döner wartet unten
+        </p>
       </div>
       <span className="absolute bottom-8 right-8 font-display text-2xl text-[var(--color-text-dim)] tabular-nums">
         {count}%

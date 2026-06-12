@@ -7,6 +7,7 @@ import Image from 'next/image';
 const navLinks = [
   { href: '/', label: 'Start' },
   { href: '/menu', label: 'Speisekarte' },
+  { href: '/#game', label: '🎮 Game' },
   { href: '/kontakt', label: 'Kontakt' },
 ];
 
