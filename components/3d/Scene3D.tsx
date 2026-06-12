@@ -11,15 +11,27 @@ import SteamParticles from './SteamParticles';
 import FloatingIngredients from './FloatingIngredients';
 import Embers from './Embers';
 
-/* Scroll-Story: Maus-Parallax + Kamera fährt beim Scrollen näher ran */
+/* Scroll-Story: Maus-Parallax + Kamera fährt beim Scrollen näher ran.
+   Maus über Window-Events statt R3F-pointer: das Canvas ist
+   pointer-events-none (sonst blockiert es mobil die Hero-CTAs). */
 function MouseParallaxRig({ scroll }: { scroll: MutableRefObject<number> }) {
-  const { camera, pointer } = useThree();
+  const { camera } = useThree();
+  const mouse = useRef({ x: 0, y: 0 });
   const target = useRef(new THREE.Vector3(0, 0, 0));
+
+  useEffect(() => {
+    const onMove = (e: PointerEvent) => {
+      mouse.current.x = (e.clientX / window.innerWidth) * 2 - 1;
+      mouse.current.y = -((e.clientY / window.innerHeight) * 2 - 1);
+    };
+    window.addEventListener('pointermove', onMove, { passive: true });
+    return () => window.removeEventListener('pointermove', onMove);
+  }, []);
 
   useFrame(() => {
     const p = scroll.current;
-    target.current.x = pointer.x * 1.6;
-    target.current.y = 0.4 + pointer.y * 0.9 - p * 0.5;
+    target.current.x = mouse.current.x * 1.6;
+    target.current.y = 0.4 + mouse.current.y * 0.9 - p * 0.5;
     const targetZ = 6.6 - p * 1.6;
     camera.position.x += (target.current.x - camera.position.x) * 0.04;
     camera.position.y += (target.current.y - camera.position.y) * 0.04;
@@ -68,7 +80,7 @@ export default function Scene3D() {
         camera={{ position: [0, 0.5, 6.6], fov: 38 }}
         dpr={[1, 1.5]}
         gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
-        style={{ background: 'transparent' }}
+        style={{ background: 'transparent', pointerEvents: 'none' }}
       >
         <Suspense fallback={null}>
           <fog attach="fog" args={['#0a0a0a', 6, 14]} />

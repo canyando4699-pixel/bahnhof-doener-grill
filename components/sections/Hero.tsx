@@ -62,8 +62,10 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* 3D-Spieß — sitzt zwischen den beiden Titelzeilen (Tiefen-Sandwich) */}
-      <div className="absolute inset-y-0 right-0 w-full md:w-[68%] z-[10] opacity-80 md:opacity-100">
+      {/* 3D-Spieß — sitzt zwischen den beiden Titelzeilen (Tiefen-Sandwich).
+          pointer-events-none: sonst schluckt das Canvas mobil (w-full) alle
+          Taps auf die CTAs — Parallax läuft über Window-Events */}
+      <div className="absolute inset-y-0 right-0 w-full md:w-[68%] z-[10] opacity-80 md:opacity-100 pointer-events-none">
         <Scene3D />
       </div>
 
