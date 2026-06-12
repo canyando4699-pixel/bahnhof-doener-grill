@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-container mx-auto px-[var(--container-px)] pt-16 pb-8">
         {/* Riesige Wortmarke */}
         <p
-          className="font-display uppercase text-[clamp(3rem,11vw,9rem)] leading-[0.85] text-outline-dim select-none"
+          className="font-display uppercase text-[clamp(3rem,11vw,9rem)] leading-[1.08] text-outline-dim select-none"
           aria-hidden="true"
         >
           Bahnhof
