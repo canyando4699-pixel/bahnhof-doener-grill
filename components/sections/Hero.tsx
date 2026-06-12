@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import MagneticButton from '@/components/animations/MagneticButton';
 import Marquee from '@/components/ui/Marquee';
+import OpenBadge from '@/components/ui/OpenBadge';
 
 const Scene3D = dynamic(() => import('@/components/3d/Scene3D'), {
   ssr: false,
@@ -70,10 +71,11 @@ export default function Hero() {
         <div className="max-w-container mx-auto px-[var(--container-px)] w-full">
           <div ref={contentRef}>
             {/* Eyebrow-Zeile */}
-            <div className="mb-6 hero-fade-in">
+            <div className="mb-6 hero-fade-in flex flex-wrap items-center gap-4">
               <p className="text-[11px] md:text-xs tracking-[0.45em] uppercase text-[var(--color-text-muted)]">
                 Am Bahnhof 10 — Frankenberg
               </p>
+              <OpenBadge />
             </div>
 
             {/* Riesen-Typo, Layer-Sandwich mit dem 3D-Spieß */}

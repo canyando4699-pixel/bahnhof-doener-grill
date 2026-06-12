@@ -3,22 +3,27 @@
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Environment, ContactShadows, Float, Lightformer } from '@react-three/drei';
 import { EffectComposer, Bloom, Vignette } from '@react-three/postprocessing';
-import { Suspense, useRef } from 'react';
+import { Suspense, useEffect, useRef } from 'react';
+import type { MutableRefObject } from 'react';
 import * as THREE from 'three';
 import DoenerSpit from './DoenerSpit';
 import SteamParticles from './SteamParticles';
 import FloatingIngredients from './FloatingIngredients';
 import Embers from './Embers';
 
-function MouseParallaxRig() {
+/* Scroll-Story: Maus-Parallax + Kamera fährt beim Scrollen näher ran */
+function MouseParallaxRig({ scroll }: { scroll: MutableRefObject<number> }) {
   const { camera, pointer } = useThree();
   const target = useRef(new THREE.Vector3(0, 0, 0));
 
   useFrame(() => {
+    const p = scroll.current;
     target.current.x = pointer.x * 1.6;
-    target.current.y = 0.4 + pointer.y * 0.9;
+    target.current.y = 0.4 + pointer.y * 0.9 - p * 0.5;
+    const targetZ = 6.6 - p * 1.6;
     camera.position.x += (target.current.x - camera.position.x) * 0.04;
     camera.position.y += (target.current.y - camera.position.y) * 0.04;
+    camera.position.z += (targetZ - camera.position.z) * 0.06;
     camera.lookAt(0, 0.2, 0);
   });
   return null;
@@ -45,6 +50,18 @@ function HeatLight() {
 }
 
 export default function Scene3D() {
+  // Scroll-Fortschritt 0→1 über die erste Viewport-Höhe (als Ref → kein Re-Render pro Frame)
+  const scrollRef = useRef(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      scrollRef.current = Math.min(1, window.scrollY / (window.innerHeight * 0.9));
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <div className="absolute inset-0" aria-hidden="true">
       <Canvas
@@ -63,12 +80,12 @@ export default function Scene3D() {
 
           <Float floatIntensity={0.4} rotationIntensity={0.15} speed={1.2}>
             <group position={[0.7, -0.15, 0]}>
-              <DoenerSpit scale={0.8} />
+              <DoenerSpit scale={0.8} scroll={scrollRef} />
             </group>
           </Float>
 
           <SteamParticles count={70} origin={[0, 1.3, 0]} />
-          <FloatingIngredients />
+          <FloatingIngredients scroll={scrollRef} />
           <Embers count={90} />
 
           <ContactShadows
@@ -87,7 +104,7 @@ export default function Scene3D() {
             <Lightformer intensity={0.5} color="#3a4a6a" position={[0, 1, -4]} scale={[6, 3, 1]} />
           </Environment>
 
-          <MouseParallaxRig />
+          <MouseParallaxRig scroll={scrollRef} />
 
           {/* ChromaticAberration entfernt: kaum sichtbar, aber teurer
               Fullscreen-Pass → weniger GPU-Last (Lüfter/Spulenfiepen) */}

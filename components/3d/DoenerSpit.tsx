@@ -23,7 +23,13 @@ function profile(u: number) {
 
 const MEAT_COLORS = ['#6e3014', '#82421e', '#8f4a22', '#75361a', '#9b5326', '#7c3b18'];
 
-export default function DoenerSpit({ scale = 1 }: { scale?: number }) {
+export default function DoenerSpit({
+  scale = 1,
+  scroll,
+}: {
+  scale?: number;
+  scroll?: React.MutableRefObject<number>;
+}) {
   const groupRef = useRef<THREE.Group>(null);
   const meatRef = useRef<THREE.Group>(null);
 
@@ -48,8 +54,10 @@ export default function DoenerSpit({ scale = 1 }: { scale?: number }) {
   }, []);
 
   useFrame((state, delta) => {
+    const p = scroll?.current ?? 0;
     if (groupRef.current) {
-      groupRef.current.rotation.y += delta * 0.45;
+      // Scroll-Story: Spieß dreht beim Scrollen deutlich schneller
+      groupRef.current.rotation.y += delta * (0.45 + p * 2.4);
     }
     if (meatRef.current) {
       meatRef.current.position.y = Math.sin(state.clock.elapsedTime * 1.5) * 0.015;

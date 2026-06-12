@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { sfx } from '@/lib/sfx';
 
 /**
  * Flappy Döner — Canvas-2D-Arcade (kein WebGL → keine extra GPU-Last).
@@ -143,10 +144,12 @@ export default function FlappyDoener() {
     const die = () => {
       setScore(g.score);
       setPhase('over');
+      sfx.die();
     };
 
     const flap = () => {
       g.vy = -530;
+      sfx.flap();
     };
 
     const onPointerDown = (e: PointerEvent) => {
@@ -177,6 +180,7 @@ export default function FlappyDoener() {
           g.score += 1;
           g.speed = Math.min(330, g.speed + 3);
           setScore(g.score);
+          sfx.score();
         }
 
         if (p.bonus && !p.bonus.taken) {

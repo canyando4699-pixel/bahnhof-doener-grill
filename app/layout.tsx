@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/sections/Navbar';
 import Footer from '@/components/sections/Footer';
 import CustomCursor from '@/components/ui/CustomCursor';
+import SoundToggle from '@/components/ui/SoundToggle';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -77,6 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-body bg-bg text-[var(--color-text)]">
         <div className="ember-glow" aria-hidden="true" />
+        <SoundToggle />
         <CustomCursor />
         <Navbar />
         {children}

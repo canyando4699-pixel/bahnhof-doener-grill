@@ -97,7 +97,11 @@ function Onion() {
   );
 }
 
-export default function FloatingIngredients() {
+export default function FloatingIngredients({
+  scroll,
+}: {
+  scroll?: React.MutableRefObject<number>;
+}) {
   const groupRef = useRef<THREE.Group>(null);
   const lettuceGeo = useLettuceGeometry();
   const meatGeo = useMeatGeometry();
@@ -121,13 +125,17 @@ export default function FloatingIngredients() {
 
   useFrame((state, delta) => {
     if (!groupRef.current) return;
-    groupRef.current.rotation.y += delta * 0.08;
+    const p = scroll?.current ?? 0;
+    // Scroll-Story: Zutaten kreisen schneller und treiben nach außen
+    groupRef.current.rotation.y += delta * (0.08 + p * 0.35);
+    const s = 1 + p * 0.45;
+    groupRef.current.scale.set(s, s, s);
     groupRef.current.children.forEach((child, i) => {
       const item = items[i];
       if (!item) return;
       child.position.y = item.pos[1] + Math.sin(state.clock.elapsedTime * item.speed + i) * 0.25;
-      child.rotation.x += delta * item.speed * 0.4;
-      child.rotation.z += delta * item.speed * 0.25;
+      child.rotation.x += delta * item.speed * (0.4 + p * 0.8);
+      child.rotation.z += delta * item.speed * (0.25 + p * 0.5);
     });
   });
 

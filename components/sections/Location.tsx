@@ -1,3 +1,5 @@
+import OpenBadge from '@/components/ui/OpenBadge';
+
 const mapsUrl =
   'https://www.google.com/maps/dir/?api=1&destination=Bahnhof+D%C3%B6ner+Grill,+Am+Bahnhof+10,+35066+Frankenberg';
 
@@ -56,7 +58,10 @@ export default function Location() {
           </div>
 
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-[var(--color-text-dim)] mb-7">Öffnungszeiten</p>
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-7">
+              <p className="text-xs tracking-[0.3em] uppercase text-[var(--color-text-dim)]">Öffnungszeiten</p>
+              <OpenBadge />
+            </div>
             <dl>
               {hours.map((row) => (
                 <div
