@@ -10,8 +10,26 @@ interface Category {
 
 export default function MenuSidebar({ categories }: { categories: Category[] }) {
   const [active, setActive] = useState(categories[0]?.id ?? '');
+  const [progress, setProgress] = useState(0);
   const isScrollingRef = useRef(false);
   const scrollTimerRef = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
+      });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
@@ -77,9 +95,21 @@ export default function MenuSidebar({ categories }: { categories: Category[] }) 
         aria-label="Kategorien"
       >
         <div className="bg-[var(--color-surface)] rounded-2xl border border-[var(--color-border)] p-4 overflow-hidden">
-          <p className="text-[10px] font-bold tracking-[0.18em] text-[var(--color-text-dim)] uppercase px-3 mb-3">
-            🎮 Level wählen
-          </p>
+          <div className="flex items-center justify-between px-3 mb-2">
+            <p className="text-[10px] font-bold tracking-[0.18em] text-[var(--color-text-dim)] uppercase">
+              🎮 Level wählen
+            </p>
+            <span className="text-[10px] tabular-nums text-accent font-semibold">
+              {Math.round(progress * 100)}%
+            </span>
+          </div>
+          {/* Scroll-Fortschritt durch die Karte */}
+          <div className="mx-3 mb-3 h-1 rounded-full bg-[var(--color-surface-2)] overflow-hidden">
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-accent to-gold transition-[width] duration-150 ease-out"
+              style={{ width: `${progress * 100}%` }}
+            />
+          </div>
 
           <nav className="space-y-0.5">
             {categories.map(({ id, name, count }, i) => (
